@@ -1,8 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy to Github pages
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   push:
     branches: [ master ]
@@ -12,6 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -19,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧
         run: |
           npm install
           npm run build
