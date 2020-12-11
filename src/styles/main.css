@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Preflight adjustments */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-default;
+  }
+
+  p, span {
+    @apply text-default;
+  }
+}
+
+@layer utilities {
+
+  .big-shadow {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.22), 0 3px 18px 0 rgba(192,204,214,0.50);
+  }
+
+  @variants responsive {
+    .default-grid {
+      @apply grid grid-cols-12 gap-2;
+    }
+  }
+
+}

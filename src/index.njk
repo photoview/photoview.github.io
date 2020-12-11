@@ -1,0 +1,165 @@
+---
+title: Photoview
+
+featuredSections:
+  -
+    title: Syncs with file system
+    screenshot: /assets/images/screenshot-photos.png
+    description: |
+      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
+      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+  -
+    title: Users and Sharing
+    screenshot: /assets/images/screenshot-albums.png
+    description: |
+      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
+      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+  -
+    title: Maps
+    screenshot: /assets/images/screenshot-maps.png
+    description: |
+      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
+      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+
+extraFeatures:
+  -
+    title: RAW Support
+    icon: <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: EXIF Metadata
+    icon: |
+      <circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+      <line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+      <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: Video Support
+    icon: <polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: Runs on ARM
+    icon: |
+      <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect>
+      <line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line>
+      <line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line>
+      <line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: Performant
+    icon: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: Secure
+    icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+  -
+    title: Private
+    icon: |
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+      <line x1="1" y1="1" x2="23" y2="23"></line>
+    description: |
+      A brief description of this feature, and why it is super useful and important.
+
+      It will probably be about this long in length
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ 'assets/main.css' | url }}">
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+  {% include 'header.njk' %}
+
+  <div class="mx-4">
+    <main class="max-w-screen-lg m-auto mb-40">
+
+      <section class="mt-16 flex justify-between items-end">
+        <div>
+          <h1 class="-ml-1 text-7xl">Photoview</h1>
+          <p class="text-2xl font-thin">Photo gallery for self-hosted personal servers</p>
+          <a class="inline-block uppercase text-white font-light mt-8 px-4 py-3 w-48 text-center text-xl bg-primary rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300" href="">
+          Quick start
+          </a>
+        </div>
+        <div>
+          <div class="text-center">
+            <div class="uppercase text-gray-500 font-bold text-xs">Use credentials</div>
+            <div>
+              <span class="text-xl align-middle">demo</span>
+              <span class="text-2xl align-middle text-gray-500 select-none">/</span>
+              <span class="text-xl align-middle">demo</span>
+            </div>
+            <a class="inline-block uppercase text-primary font-light mt-4 px-4 py-3 w-48 text-center text-xl border-2 border-primary rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300" href="{{ 'https://photos.qpqp.dk' | url }}">
+            Demo site
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-4">
+
+      {% for section in featuredSections %}
+        <section class="default-grid mt-20 mb-40 h-96 relative">
+          <div class="{{ 'col-start-2' if loop.index0 % 2 == 0 else 'col-start-7' }} col-span-5 mt-10">
+            <h1 class="text-4xl mb-4 tracking-wide">{{ section.title }}</h1>
+            <p>
+            {{ section.description }}
+            </p>
+          </div>
+          <img class="rounded-lg big-shadow bg-white absolute {{ 'left-572px' if loop.index0 % 2 == 0 else 'right-572px' }}"
+              height="430" width="775"
+              src="{{ section.screenshot | url }}"
+              alt="Screenshot of photos page">
+        </section>
+      {%- endfor %}
+
+      <section>
+      <h1 class="text-4xl my-10">And <i>much</i> more...</h1>
+      <ul class="default-grid">
+
+      {% for feature in extraFeatures %}
+        <li class="col-span-4 flex items-start mb-6">
+          <div aria-hidden="true" class="flex-shrink-0 rounded-md bg-gray-200 text-default mr-4 p-4 inline-block">
+            <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {{ feature.icon | safe }}
+            </svg>
+          </div>
+          <div class="flex-grow -mt-1">
+            <h2 class="text-lg font-bold text-default">{{ feature.title }}</h2>
+            {% paragraph feature.description, 'text-sm pb-2' %}
+          </div>
+        </li>
+      {%- endfor %}
+
+      </ul>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
