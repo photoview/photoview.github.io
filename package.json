@@ -7,7 +7,7 @@
   "scripts": {
     "start": "eleventy --serve --input=./src",
     "build": "NODE_ENV=production eleventy --input=./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=production eleventy --input=./src --dryrun"
   },
   "repository": {
     "type": "git",
