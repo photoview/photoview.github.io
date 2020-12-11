@@ -20,7 +20,16 @@
     "@11ty/eleventy": "^0.11.1",
     "eleventy-plugin-tailwindcss": "^0.2.6",
     "html-minifier": "^4.0.0",
+    "markdown-it": "^10.0.0",
     "postcss-cli": "^8.3.0",
+    "prettier": "^2.2.1",
     "tailwindcss": "^2.0.1"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid"
   }
 }

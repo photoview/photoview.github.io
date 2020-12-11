@@ -6,25 +6,34 @@
 
 @layer base {
   /* Preflight adjustments */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-default;
   }
 
-  p, span {
+  p,
+  span {
     @apply text-default;
+  }
+
+  a {
+    @apply text-blue-900 underline hover:text-blue-800;
   }
 }
 
 @layer utilities {
-
   .big-shadow {
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.22), 0 3px 18px 0 rgba(192,204,214,0.50);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.22),
+      0 3px 18px 0 rgba(192, 204, 214, 0.5);
   }
 
   @variants responsive {
     .default-grid {
-      @apply grid grid-cols-12 gap-2;
+      @apply grid grid-cols-12 gap-4;
     }
   }
-
 }

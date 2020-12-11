@@ -26,9 +26,10 @@ extraFeatures:
     title: RAW Support
     icon: <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle>
     description: |
-      A brief description of this feature, and why it is super useful and important.
+      Darktable is used under the hood to convert RAW images,
+      and thus supports many common formats.
 
-      It will probably be about this long in length
+      See the <a href="https://www.darktable.org/resources/camera-support/">supported cameras</a> here.
   -
     title: EXIF Metadata
     icon: |
@@ -36,16 +37,13 @@ extraFeatures:
       <line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
       <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      The metadata of images and videos is automatically extracted and shown in the sidebar.
+      It's also used to present images on a map.
   -
     title: Video Support
     icon: <polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      Ffmpeg is used under the hood to convert videos and optimize them for the web.
   -
     title: Runs on ARM
     icon: |
@@ -54,32 +52,26 @@ extraFeatures:
       <line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line>
       <line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      Photoview runs on many platforms, including ARM processors.
+      Making it possible to run on embedded devices like the Raspberry Pi.
   -
     title: Performant
     icon: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      Thumbnails are automatically generated and photos first load when they are visible on the screen.
   -
     title: Secure
     icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      All media resources are protected with a cookie-token, all passwords are properly hashed,
+      and the API uses a strict <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS policy</a>.
   -
     title: Private
     icon: |
       <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
       <line x1="1" y1="1" x2="23" y2="23"></line>
     description: |
-      A brief description of this feature, and why it is super useful and important.
-
-      It will probably be about this long in length
+      Your media is valuable, with Photoview nothing leaves your server.
 
 ---
 <!DOCTYPE html>
@@ -100,7 +92,9 @@ extraFeatures:
         <div>
           <h1 class="-ml-1 text-7xl">Photoview</h1>
           <p class="text-2xl font-thin">Photo gallery for self-hosted personal servers</p>
-          <a class="inline-block uppercase text-white font-light mt-8 px-4 py-3 w-48 text-center text-xl bg-primary rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300" href="">
+          <a class="inline-block uppercase text-white font-light mt-8 px-4 py-3 w-48 text-center text-xl bg-primary
+            rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300
+            no-underline hover:text-white" href="">
           Quick start
           </a>
         </div>
@@ -112,7 +106,9 @@ extraFeatures:
               <span class="text-2xl align-middle text-gray-500 select-none">/</span>
               <span class="text-xl align-middle">demo</span>
             </div>
-            <a class="inline-block uppercase text-primary font-light mt-4 px-4 py-3 w-48 text-center text-xl border-2 border-primary rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300" href="{{ 'https://photos.qpqp.dk' | url }}">
+            <a class="inline-block uppercase text-primary font-light mt-4 px-4 py-3 w-48 text-center text-xl border-2
+              border-primary rounded-md transition-shadow hover:shadow-md focus:outline-none focus:ring focus:ring-blue-300
+              no-underline hover:text-primary" href="{{ 'https://photos.qpqp.dk' | url }}">
             Demo site
             </a>
           </div>
@@ -142,7 +138,7 @@ extraFeatures:
 
       {% for feature in extraFeatures %}
         <li class="col-span-4 flex items-start mb-6">
-          <div aria-hidden="true" class="flex-shrink-0 rounded-md bg-gray-200 text-default mr-4 p-4 inline-block">
+          <div aria-hidden="true" class="flex-shrink-0 rounded-md bg-gray-200 text-default mr-3 p-3 inline-block">
             <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg"
               width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               {{ feature.icon | safe }}
