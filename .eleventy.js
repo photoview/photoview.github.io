@@ -1,6 +1,7 @@
 const pluginTailwindCSS = require('eleventy-plugin-tailwindcss')
 const htmlmin = require('html-minifier')
 const markdownIt = require('markdown-it')
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 
 const markdownOptions = {
   html: true,
@@ -20,6 +21,12 @@ module.exports = function (eleventyConfig) {
     minify: isProduction,
     watchEleventyWatchTargets: true,
   })
+
+  // Navigation
+  eleventyConfig.addPlugin(eleventyNavigationPlugin)
+
+  // Markdown
+  eleventyConfig.setLibrary('md', markdownIt(markdownOptions))
 
   // Minify HTML in production
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
