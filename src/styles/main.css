@@ -17,7 +17,7 @@
 
   p,
   span {
-    @apply text-default;
+    @apply text-default py-2;
   }
 
   a {

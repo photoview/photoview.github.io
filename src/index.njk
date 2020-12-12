@@ -6,20 +6,30 @@ featuredSections:
     title: Syncs with file system
     screenshot: /assets/images/screenshot-photos.png
     description: |
-      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
-      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+      You configure photoview to search for media directly from the file system.
+      The media is then automatically organized based on the file structure,
+      directories will become albums that are populated with the photos and videos found inside it.
+      It will automatically rescan for new media and add it to keep it updated.
+
+      This approach gives you the full control to organize your media how you want.
+      Let it be using a file server like Samba or FTP, or even files from a Nextcloud instance.
   -
     title: Users and Sharing
     screenshot: /assets/images/screenshot-albums.png
     description: |
-      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
-      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+      Multiple users can be configured, each with their own directory of photos and videos.
+      Each user is configured with a username and password, to keep their media private.
+
+      Albums and individual photos or videos can easily be shared by generating a public or password protected link.
   -
     title: Maps
     screenshot: /assets/images/screenshot-maps.png
     description: |
-      Certe, inquam, pertinax non numquam eius modi tempora incidunt, ut ad respondendum reddidisti quorum facta quem ad modum, quaeso, interpretaris?
-      sicine eos et voluptatem sequi nesciunt, neque disputatione, quam ostendis sed ipsius honestatis decore laudandis, id est et harum quidem faciunt, ut calere ignem, nivem.
+      When photos are analyzed for EXIF metadata, this information is displayed next to the photo.
+      If the photo is taken with a mobile phone, it most likely includes the coordinates of where the picture was taken.
+      This is used to automatically present the photos on a map.
+
+      When multiple photos are taken at the same location, they are grouped so they can be viewed together.
 
 extraFeatures:
   -
@@ -72,6 +82,11 @@ extraFeatures:
       <line x1="1" y1="1" x2="23" y2="23"></line>
     description: |
       Your media is valuable, with Photoview nothing leaves your server.
+  -
+    title: Free and Open-Source
+    icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
+    description: |
+      Photoview is completely free and the code is open for everyone to look at and modify.
 
 ---
 <!DOCTYPE html>
@@ -121,9 +136,7 @@ extraFeatures:
         <section class="default-grid mt-20 mb-40 h-96 relative">
           <div class="{{ 'col-start-2' if loop.index0 % 2 == 0 else 'col-start-7' }} col-span-5 mt-10">
             <h1 class="text-4xl mb-4 tracking-wide">{{ section.title }}</h1>
-            <p>
-            {{ section.description }}
-            </p>
+            {{ section.description | markdown | safe }}
           </div>
           <img class="rounded-lg big-shadow bg-white absolute {{ 'left-572px' if loop.index0 % 2 == 0 else 'right-572px' }}"
               height="430" width="775"
@@ -146,7 +159,7 @@ extraFeatures:
           </div>
           <div class="flex-grow -mt-1">
             <h2 class="text-lg font-bold text-default">{{ feature.title }}</h2>
-            {% paragraph feature.description, 'text-sm pb-2' %}
+            {% paragraph feature.description, 'text-sm pb-2 pt-0' %}
           </div>
         </li>
       {%- endfor %}
