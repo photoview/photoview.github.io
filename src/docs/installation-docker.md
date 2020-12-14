@@ -3,6 +3,4 @@ title: Configuring Docker
 group: Installation
 ---
 
-# Configuring Docker
-
-Details about Docker settings
+Details about Docker settings TODO

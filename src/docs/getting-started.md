@@ -5,8 +5,6 @@ group: root
 permalink: /docs/
 ---
 
-# Getting started
-
 _Get Photoview up and running as quickly as possible_
 
 ## Setup with Docker

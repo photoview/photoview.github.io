@@ -66,6 +66,13 @@
     </style>
 
     <main class="mb-40 w-full pl-14 py-14 pr-4">
+
+    <header class="flex justify-between items-start">
+    <h1>{{ title }}</h1>
+    <a class="border-gray-800  text-gray-800 border-b hover:text-primaryDark hover:border-primaryDark uppercase tracking-wider text-sm no-underline"
+      href="https://github.com/photoview/photoview.github.io/edit/master/{{ page.inputPath }}">Edit on GitHub</a>
+    </header>
+
     {{ content | safe }}
     </main>
 
