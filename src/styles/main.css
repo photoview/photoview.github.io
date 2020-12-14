@@ -54,7 +54,7 @@
 
   @variants responsive {
     .default-grid {
-      @apply grid grid-cols-12 gap-4;
+      @apply grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4;
     }
   }
 }

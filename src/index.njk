@@ -104,7 +104,7 @@ extraFeatures:
   <div class="mx-4">
     <main class="max-w-screen-lg m-auto mb-40">
 
-      <section class="mt-16 flex justify-between items-end">
+      <section class="mt-16 flex gap-y-8 flex-wrap justify-between items-end">
         <div>
           <h1 class="-ml-1 text-7xl">Photoview</h1>
           <p class="text-2xl font-thin">Photo gallery for self-hosted personal servers</p>
@@ -134,12 +134,17 @@ extraFeatures:
       <hr class="my-4">
 
       {% for section in featuredSections %}
-        <section class="default-grid mt-20 mb-40 h-96 relative">
-          <div class="{{ 'col-start-2' if loop.index0 % 2 == 0 else 'col-start-7' }} col-span-5 mt-10">
+        <section class="default-grid lg:mt-20 lg:mb-40 lg:h-96 relative">
+          <div
+            class="{{ 'lg:col-start-2' if loop.index0 % 2 == 0 else 'lg:col-start-7' }} lg:col-span-5 mt-10
+              sm:col-start-2 sm:col-span-6 col-span-full">
             <h1 class="text-4xl mb-4 tracking-wide">{{ section.title }}</h1>
             {{ section.description | markdown | safe }}
           </div>
-          <img class="rounded-lg big-shadow bg-white absolute {{ 'left-572px' if loop.index0 % 2 == 0 else 'right-572px' }}"
+          <img
+              class="rounded-lg big-shadow bg-white lg:absolute {{ 'lg:left-572px' if loop.index0 % 2 == 0 else 'lg:right-572px' }}
+                col-span-full m-auto
+              "
               height="430" width="775"
               src="{{ section.screenshot | url }}"
               alt="Screenshot of photos page">
