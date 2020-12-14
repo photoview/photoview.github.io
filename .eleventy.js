@@ -1,7 +1,6 @@
 const pluginTailwindCSS = require('eleventy-plugin-tailwindcss')
 const htmlmin = require('html-minifier')
 const markdownIt = require('markdown-it')
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 
 const markdownOptions = {
   html: true,
@@ -21,9 +20,6 @@ module.exports = function (eleventyConfig) {
     minify: isProduction,
     watchEleventyWatchTargets: true,
   })
-
-  // Navigation
-  eleventyConfig.addPlugin(eleventyNavigationPlugin)
 
   // Markdown
   eleventyConfig.setLibrary('md', markdownIt(markdownOptions))
@@ -53,5 +49,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('markdown', function (text) {
     const md = markdownIt(markdownOptions)
     return md.render(text)
+  })
+
+  eleventyConfig.addFilter('debug', obj => {
+    console.log('DEBUG', obj)
+  })
+
+  eleventyConfig.addFilter('docsNavGroupItems', function (group, collection) {
+    return collection.filter(x => x.data.group == group)
   })
 }

@@ -1,6 +1,6 @@
 ---
 title: Configure using Docker
-parent: Getting Started
+group: Installation
 ---
 
 # Configure using Docker

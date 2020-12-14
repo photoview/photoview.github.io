@@ -12,25 +12,42 @@
     <div class="max-w-screen-lg m-auto flex items-start min-h-screen">
 
     <aside class="w-72 sticky top-0 docs-nav pr-4">
-      <nav class="mt-8">
-        {% set navPages = collections.all | eleventyNavigation %}
-        <ul>
-        {%- for entry in navPages %}
-          <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
 
-            {% if entry.children %}
-              <ul class="ml-4">
-              {%- for subEntry in entry.children %}
-                <li>
-                  <a href="{{ subEntry.url | url }}">{{ subEntry.title }}</a>
-                </li>
+      <a href="{{ '/' | url }}">
+        <img class="my-8" src="{{ '/assets/images/logo-large.svg' }}" alt="Photoview logo">
+      </a>
+
+      {% macro navEntryItem(entry) %}
+      <li>
+        <a
+          class="px-3 py-2 block no-underline hover:no-underline
+            {{ 'bg-blue-50 text-primaryDark hover:text-primaryDark' if entry.url == page.url else 'text-black hover:text-gray-900 hover:bg-gray-100' }}"
+          href="{{ entry.url | url }}">
+          {{ entry.data.title }}
+        </a>
+      </li>
+      {% endmacro %}
+
+      <nav class="">
+        <ul>
+
+        {%- for entry in "root" | docsNavGroupItems(collections.all) %}
+          {{ navEntryItem(entry) }}
+        {%- endfor %}
+
+        {%- for group in navGroups %}
+          <li class="">
+            <span class="ml-3 mt-6 mb-2 block uppercase text-gray-600 font-bold text-xs tracking-wider">{{ group }}</span>
+
+              <ul>
+              {%- for entry in group | docsNavGroupItems(collections.all) %}
+                {{ navEntryItem(entry) }}
               {%- endfor %}
               </ul>
-            {% endif %}
 
           </li>
         {%- endfor %}
+
         </ul>
       </nav>
     </aside>
