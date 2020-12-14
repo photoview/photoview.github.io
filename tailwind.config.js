@@ -1,7 +1,10 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.njk'],
+  purge: {
+    layers: ['components', 'utilities'],
+    content: ['./src/**/*.html', './src/**/*.njk'],
+  },
   theme: {
     fontFamily: {
       sans: ['Lato', 'sans-serif'],

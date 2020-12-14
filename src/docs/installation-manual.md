@@ -1,5 +1,5 @@
 ---
-title: Manual Setup without Docker
+title: Manual Setup
 group: Installation
 ---
 
