@@ -4,6 +4,8 @@ const markdownIt = require('markdown-it')
 
 const markdownOptions = {
   html: true,
+  breaks: false,
+  linkify: true,
 }
 
 module.exports = function (eleventyConfig) {
@@ -22,7 +24,7 @@ module.exports = function (eleventyConfig) {
   })
 
   // Markdown
-  eleventyConfig.setLibrary('md', markdownIt(markdownOptions))
+  setupMarkdown(eleventyConfig)
 
   // Minify HTML in production
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
@@ -57,5 +59,25 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('docsNavGroupItems', function (group, collection) {
     return collection.filter(x => x.data.group == group)
+  })
+}
+
+const setupMarkdown = config => {
+  const linkAnchorOptions = {
+    permalink: true,
+    permalinkAttrs: () => ({ 'aria-label': 'Anchor' }),
+    permalinkClass: 'header-anchor',
+    permalinkSymbol: '#',
+    permalinkBefore: true,
+  }
+
+  const md = markdownIt(markdownOptions).use(
+    require('markdown-it-anchor'),
+    linkAnchorOptions
+  )
+
+  config.setLibrary('md', md)
+  config.addFilter('markdown', markdown => {
+    return md.render(markdown)
   })
 }

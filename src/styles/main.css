@@ -29,20 +29,79 @@
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
 
   h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
     @apply text-xl;
   }
 
+  /* Header anchors */
+  h1 > a.header-anchor,
+  h2 > a.header-anchor,
+  h3 > a.header-anchor,
+  h4 > a.header-anchor,
+  h5 > a.header-anchor,
+  h6 > a.header-anchor {
+    position: absolute;
+    margin-left: -2.6rem;
+    padding-right: 1rem;
+    width: 3rem;
+    text-align: right;
+    opacity: 0;
+
+    @apply text-gray-400 no-underline hover:underline select-none;
+  }
+
+  h1:hover > a.header-anchor,
+  h1 > a.header-anchor:focus,
+  h2:hover > a.header-anchor,
+  h2 > a.header-anchor:focus,
+  h3:hover > a.header-anchor,
+  h3 > a.header-anchor:focus,
+  h4:hover > a.header-anchor,
+  h4 > a.header-anchor:focus,
+  h5:hover > a.header-anchor,
+  h5 > a.header-anchor:focus,
+  h6:hover > a.header-anchor,
+  h6 > a.header-anchor:focus {
+    opacity: 1;
+  }
+
   p,
-  span {
+  span,
+  em {
     @apply text-default py-2;
   }
 
   a {
     @apply text-blue-900 underline hover:text-blue-800;
+  }
+
+  code {
+    line-height: 1.7;
+    @apply bg-gray-100 p-05 rounded-md text-gray-800;
+  }
+
+  blockquote {
+    @apply bg-gray-50 border-l-4 border-gray-200 pl-4 my-2;
+  }
+
+  blockquote,
+  blockquote p {
+    @apply text-gray-600;
+  }
+
+  ol {
+    @apply pl-4;
+  }
+
+  ol > li {
+    @apply list-decimal;
   }
 }
 

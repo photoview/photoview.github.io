@@ -17,10 +17,11 @@ module.exports = {
       colors: {
         primary: '#168fd4',
         primaryDark: '#00598e',
-        default: '#565656',
+        default: '#001012',
       },
       spacing: {
         '572px': '572px',
+        '05': '0.2rem',
       },
     },
   },

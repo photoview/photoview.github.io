@@ -1,8 +1,8 @@
 ---
-title: Configure using Docker
+title: Configuring Docker
 group: Installation
 ---
 
-# Configure using Docker
+# Configuring Docker
 
-How to do
+Details about Docker settings

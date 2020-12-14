@@ -21,6 +21,7 @@
     "eleventy-plugin-tailwindcss": "^0.2.6",
     "html-minifier": "^4.0.0",
     "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^6.0.1",
     "postcss-cli": "^8.3.0",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.1"
