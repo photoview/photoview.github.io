@@ -4,7 +4,7 @@ title: Photoview
 featuredSections:
   -
     title: Syncs with file system
-    screenshot: /assets/images/screenshot-photos.png
+    screenshot: ./src/assets/images/screenshot-photos.png
     description: |
       You configure photoview to search for media directly from the file system.
       The media is then automatically organized based on the file structure,
@@ -15,7 +15,7 @@ featuredSections:
       Let it be using a file server like Samba or FTP, or even files from a Nextcloud instance.
   -
     title: Users and Sharing
-    screenshot: /assets/images/screenshot-albums.png
+    screenshot: ./src/assets/images/screenshot-albums.png
     description: |
       Multiple users can be configured, each with their own directory of photos and videos.
       Each user is configured with a username and password, to keep their media private.
@@ -23,7 +23,7 @@ featuredSections:
       Albums and individual photos or videos can easily be shared by generating a public or password protected link.
   -
     title: Maps
-    screenshot: /assets/images/screenshot-maps.png
+    screenshot: ./src/assets/images/screenshot-maps.png
     description: |
       When photos are analyzed for EXIF metadata, this information is displayed next to the photo.
       If the photo is taken with a mobile phone, it most likely includes the coordinates of where the picture was taken.
@@ -141,13 +141,10 @@ extraFeatures:
             <h1 class="text-4xl mb-4 tracking-wide">{{ section.title }}</h1>
             {{ section.description | markdown | safe }}
           </div>
-          <img
-              class="rounded-lg big-shadow bg-white lg:absolute {{ 'lg:left-572px' if loop.index0 % 2 == 0 else 'lg:right-572px' }}
-                col-span-full m-auto
-              "
-              height="430" width="775"
-              src="{{ section.screenshot | url }}"
-              alt="Screenshot of photos page">
+          <picture class="overflow-hidden rounded-lg big-shadow bg-white lg:absolute {{ 'lg:left-572px' if loop.index0 % 2 == 0 else 'lg:right-572px' }}
+                col-span-full m-auto" style="width: 775px; height: 430px;">
+          {% optimizedImage section.screenshot, "Screenshot of photos page" %}
+          </picture>
         </section>
       {%- endfor %}
 

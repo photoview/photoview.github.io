@@ -72,6 +72,15 @@
     opacity: 1;
   }
 
+  h1 > a.header-anchor::before,
+  h2 > a.header-anchor::before,
+  h3 > a.header-anchor::before,
+  h4 > a.header-anchor::before,
+  h5 > a.header-anchor::before,
+  h6 > a.header-anchor::before {
+    content: '#';
+  }
+
   p,
   span,
   em {
