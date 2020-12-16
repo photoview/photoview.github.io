@@ -2,6 +2,7 @@ const pluginTailwindCSS = require('eleventy-plugin-tailwindcss')
 const htmlmin = require('html-minifier')
 const markdownIt = require('markdown-it')
 const Image = require('@11ty/eleventy-img')
+const path = require('path')
 
 const markdownOptions = {
   html: true,
@@ -28,9 +29,15 @@ module.exports = function (eleventyConfig) {
   setupMarkdown(eleventyConfig)
 
   // Optimize images
-  eleventyConfig.addNunjucksAsyncShortcode(
+  eleventyConfig.addAsyncShortcode(
     'optimizedImage',
-    async (src, alt) => {
+    async function (src, alt, attrs = '') {
+      if (!path.isAbsolute(src)) {
+        src = path.join(path.dirname(this.page.inputPath), src)
+      } else {
+        src = path.join('.', src)
+      }
+
       if (alt === undefined) {
         throw new Error(`Missing \`alt\` on image shortcode from: ${src}`)
       }
@@ -45,7 +52,8 @@ module.exports = function (eleventyConfig) {
       let sizes = '100vw' // Make sure you customize this!
 
       // Iterate over formats and widths
-      return `${Object.values(stats)
+      return `<picture ${attrs} >
+      ${Object.values(stats)
         .map(imageFormat => {
           return `  <source type="image/${
             imageFormat[0].format
@@ -56,7 +64,8 @@ module.exports = function (eleventyConfig) {
         .join('\n')}
         <img
           src="${lowestSrc.url}"
-          alt="${alt}">`
+          alt="${alt}">
+        </picture>`
     }
   )
 

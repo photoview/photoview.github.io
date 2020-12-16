@@ -17,6 +17,8 @@ Make a new `docker-compose.yml` file, and copy the content of [docker-compose.ex
 
 Edit `docker-compose.yml`, find the comments starting with `Change This:`, and change the values, to properly match your setup. If you are just testing locally, you don't have to change anything.
 
+For more details see [Configuring Docker](installation-docker)
+
 ## Starting the server
 
 Run the following command to start the server.
@@ -31,7 +33,7 @@ If the endpoint or the port hasn't been changed in the `docker-compose.yml` file
 
 When you first visit the site, you should be presented with an initial setup wizard.
 
-![Initial setup](https://raw.githubusercontent.com/photoview/photoview/master/screenshots/initial-setup.png)
+{% optimizedImage './initial-setup.png', 'initial setup screen', 'class="block w-100 my-8"' %}
 
 Enter a new **username** and **password**.
 

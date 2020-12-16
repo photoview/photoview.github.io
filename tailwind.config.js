@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     layers: ['components', 'utilities'],
-    content: ['./src/**/*.html', './src/**/*.njk'],
+    content: ['./src/**/*.html', './src/**/*.njk', './src/**/*.md'],
   },
   theme: {
     fontFamily: {
@@ -23,6 +23,7 @@ module.exports = {
         default: '#001012',
       },
       spacing: {
+        100: '28rem',
         '572px': '572px',
         '05': '0.2rem',
       },
