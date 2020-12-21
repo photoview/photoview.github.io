@@ -114,6 +114,32 @@
   }
 }
 
+@layer components {
+  .docs-toc {
+    @apply top-14;
+  }
+
+  .docs-toc ol {
+    padding: 0;
+  }
+
+  .docs-toc ol ol {
+    padding-left: 1rem;
+  }
+
+  .docs-toc ol li {
+    list-style: none;
+  }
+
+  .docs-toc ol li a {
+    @apply inline-block py-1 text-black text-xs no-underline hover:text-primaryDark;
+  }
+
+  .docs-toc ol li a.active {
+    @apply text-primaryDark;
+  }
+}
+
 @layer utilities {
   .big-shadow {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.22),

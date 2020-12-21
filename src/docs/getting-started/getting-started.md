@@ -29,7 +29,7 @@ docker-compose up -d
 
 If the endpoint or the port hasn't been changed in the `docker-compose.yml` file, Photoview can now be accessed at http://localhost:8000
 
-# Setup Wizard
+## Setup Wizard
 
 When you first visit the site, you should be presented with an initial setup wizard.
 

@@ -1,5 +1,5 @@
 ---
-title: Configuring Docker
+title: Docker
 group: Installation
 ---
 

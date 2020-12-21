@@ -3,6 +3,7 @@ const htmlmin = require('html-minifier')
 const markdownIt = require('markdown-it')
 const Image = require('@11ty/eleventy-img')
 const path = require('path')
+const pluginTOC = require('eleventy-plugin-toc')
 
 const markdownOptions = {
   html: true,
@@ -14,12 +15,12 @@ module.exports = function (eleventyConfig) {
   const isProduction = process.env.NODE_ENV == 'production'
 
   // Copy assets
-  eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy({ 'src/assets': '.' })
 
   // Tailwind
   eleventyConfig.addPlugin(pluginTailwindCSS, {
     src: 'src/styles/main.css',
-    dest: 'assets',
+    dest: '.',
     keepFolderStructure: false,
     minify: isProduction,
     watchEleventyWatchTargets: true,
@@ -27,6 +28,9 @@ module.exports = function (eleventyConfig) {
 
   // Markdown
   setupMarkdown(eleventyConfig)
+
+  // Table of contents
+  eleventyConfig.addPlugin(pluginTOC)
 
   // Optimize images
   eleventyConfig.addAsyncShortcode(
@@ -45,8 +49,8 @@ module.exports = function (eleventyConfig) {
       let stats = await Image(src, {
         widths: [640, null],
         formats: ['webp', 'jpeg'],
-        outputDir: './_site/assets/images',
-        urlPath: '/assets/images/',
+        outputDir: './_site/images',
+        urlPath: '/images/',
       })
       let lowestSrc = stats['jpeg'][0]
       let sizes = '100vw' // Make sure you customize this!
