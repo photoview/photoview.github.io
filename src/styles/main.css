@@ -96,6 +96,14 @@
     @apply bg-gray-100 px-1 py-05 rounded-md text-gray-800;
   }
 
+  pre {
+    @apply block my-2;
+  }
+
+  pre > code {
+    @apply block px-4 py-3;
+  }
+
   blockquote {
     @apply bg-gray-50 border-l-4 border-gray-200 pl-4 my-2;
   }
