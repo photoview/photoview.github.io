@@ -11,7 +11,7 @@ All files uploaded to Nextcloud are located in the folder called `data/` at the 
 Inside that folder you will find another folder for each Nextcloud user.
 All files uploaded by a user is located inside their respective folders.
 
-Not find the path to where your Nextcloud media is located, copy it as we will need it later.
+Now find the path to where your Nextcloud media is located, and copy it as we will need it later.
 The path could look somthing like this:
 
     ~/nextcloud/data/example_user/files/Photos
