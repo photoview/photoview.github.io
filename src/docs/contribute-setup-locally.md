@@ -3,7 +3,7 @@ title: Setup Development Environment
 group: Contributing
 ---
 
-How to setup development environment locally.
+How to set up a development environment locally.
 
 ### Local setup
 
