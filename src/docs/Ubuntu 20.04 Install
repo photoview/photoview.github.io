@@ -1,0 +1,14 @@
+> # PhotoView Wiki- Home
+ ## The Best Open Source Google Photos Alternative
+
+### Ubuntu 20.04 Setup
+
+[MYSQL 8 Install](https://github.com/DevilsDesigns/photoview/wiki/Installing-MYSQL-8-on-Ubuntu-20.04)
+
+[installing Photoview and Configurations](https://github.com/DevilsDesigns/photoview/wiki/Installing-Photoview-and-Configuring)
+
+[Photoview Systemd Install](https://github.com/DevilsDesigns/photoview/wiki/Systemd-for-Photoview-Ubuntu-20.04)
+
+### Docker Setup
+
+[Setup Photoview in Docker](https://github.com/DevilsDesigns/photoview/wiki/Setup-of-Photoview-in-Docker)
