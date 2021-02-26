@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it')
 const Image = require('@11ty/eleventy-img')
 const path = require('path')
 const pluginTOC = require('eleventy-plugin-toc')
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 const markdownOptions = {
   html: true,
@@ -25,6 +26,9 @@ module.exports = function (eleventyConfig) {
     minify: isProduction,
     watchEleventyWatchTargets: true,
   })
+
+  // Syntax highlighting
+  eleventyConfig.addPlugin(syntaxHighlight)
 
   // Markdown
   setupMarkdown(eleventyConfig)
