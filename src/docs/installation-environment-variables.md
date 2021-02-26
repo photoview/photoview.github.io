@@ -9,11 +9,9 @@ This page presents an index of them all along with a description.
 ## Database related
 
 Environment variables related to configuration of the database.
-
-### `PHOTOVIEW_DATABASE_DRIVER`
-
-Available options `mysql` <small>(default)</small>, `postgres` and `sqlite`.
-Defines what database backend is used.
+Required |Variable | Default | Notes 
+---------|---------|---------|------
+:heavy_check_mark: |`PHOTOVIEW_DATABASE_DRIVER` | mysql | Available options `mysql` <small>(default)</small>, `postgres` and `sqlite`. Defines what database backend is used.
 
 ### `PHOTOVIEW_MYSQL_URL`
 
