@@ -30,5 +30,8 @@ Required |Variable | Default | Notes
 :white_check_mark:|`PHOTOVIEW_UI_ENDPOINT` | |Used if `PHOTOVIEW_SERVE_UI` is disabled. The url from where the UI can be accessed publicly.
 
 ## General
+
+Required |Variable | Default | Notes 
+---------|---------|---------|------
 :white_check_mark:|`PHOTOVIEW_MEDIA_CACHE`| `./photo_cache`|Filepath for where to store generated media such as thumbnails and optimized videos.
 :white_check_mark: |`MAPBOX_TOKEN`| |To enable map related features, you need to create a mapbox token. A token can be generated for free at https://account.mapbox.com/access-tokens/ It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
