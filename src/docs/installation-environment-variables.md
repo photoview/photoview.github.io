@@ -9,40 +9,21 @@ This page presents an index of them all along with a description.
 ## Database related
 
 Environment variables related to configuration of the database.
+
 Required |Variable | Default | Notes 
 ---------|---------|---------|------
 :heavy_check_mark: |`PHOTOVIEW_DATABASE_DRIVER` | mysql | Available options `mysql` <small>(default)</small>, `postgres` and `sqlite`. Defines what database backend is used.
-
-### `PHOTOVIEW_MYSQL_URL`
-
-Required if the driver is `mysql`.
-
-The URL of the MySQL database to connect to.
-See [formatting documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name).
-
-### `PHOTOVIEW_POSTGRES_URL`
-
-Required if the driver is `postgres`.
-
-The connection string of the Postgres database to connect to.
-See [formatting documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING).
-
-### `PHOTOVIEW_SQLITE_PATH`
-
-Required if the driver is `sqlite`.
-
-Specifies the filepath for where the sqlite database should be saved.
+:white_check_mark: | `PHOTOVIEW_MYSQL_URL`|  | Required if the driver is `mysql`. The URL of the MySQL database to connect to. See [formatting documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name).
+:white_check_mark: |`PHOTOVIEW_POSTGRES_URL` | | Required if the driver is `postgres`. The connection string of the Postgres database to connect to. See [formatting documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING).
+:white_check_mark: |`PHOTOVIEW_SQLITE_PATH`| |Required if the driver is `sqlite`. Specifies the filepath for where the sqlite database should be saved.
 
 ## Server related
 
-### `PHOTOVIEW_LISTEN_IP` and `PHOTOVIEW_LISTEN_PORT`
-
-The IP interface and Port for the server to listen on.
-In most cases `PHOTOVIEW_LISTEN_IP` can be set to `localhost`.
-
-### `PHOTOVIEW_SERVE_UI`
-
-Set to `1` for the server to also serve the built static ui files.
+Required |Variable | Default | Notes 
+---------|---------|---------|------
+:heavy_check_mark: |`PHOTOVIEW_LISTEN_IP`|  |The IP for the server to listen on. In most cases can be set to `localhost`.
+:heavy_check_mark:|`PHOTOVIEW_LISTEN_PORT`| | The port for the server to listen on
+:heavy_check_mark:|`PHOTOVIEW_SERVE_UI` | |Set to `1` for the server to also serve the built static ui files.
 
 ### `PHOTOVIEW_UI_PATH`
 
