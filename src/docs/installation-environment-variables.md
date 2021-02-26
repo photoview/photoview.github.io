@@ -24,38 +24,12 @@ Required |Variable | Default | Notes
 :heavy_check_mark: |`PHOTOVIEW_LISTEN_IP`|  |The IP for the server to listen on. In most cases can be set to `localhost`.
 :heavy_check_mark:|`PHOTOVIEW_LISTEN_PORT`| | The port for the server to listen on
 :heavy_check_mark:|`PHOTOVIEW_SERVE_UI` | |Set to `1` for the server to also serve the built static ui files.
-
-### `PHOTOVIEW_UI_PATH`
-
-Specify where the built UI files are located if `PHOTOVIEW_SERVE_UI` is enabled.
-Defaults to `./ui`.
-
-### `PHOTOVIEW_PUBLIC_ENDPOINT`
-
-Used if `PHOTOVIEW_SERVE_UI` is enabled.
-
-The URL from where the server can be accessed.
-
-For example if the server is available from the domain example.com,
-change this value to http://example.com/.
-
-If the server is encrypted with SSL, make sure to update the url protocol to `https://`.
-
-### `PHOTOVIEW_API_ENDPOINT` and `PHOTOVIEW_UI_ENDPOINT`
-
-Used if `PHOTOVIEW_SERVE_UI` is disabled.
-
-The url from where the API and the UI respectively can be accessed publicly.
+:heavy_check_mark:|`PHOTOVIEW_UI_PATH`| `./ui` |Specify where the built UI files are located if `PHOTOVIEW_SERVE_UI` is enabled.
+:heavy_check_mark:|`PHOTOVIEW_PUBLIC_ENDPOINT` | |Used if `PHOTOVIEW_SERVE_UI` is enabled. The URL from where the server can be accessed. For example if the server is available from the domain example.com,
+change this value to http://example.com/. If the server is encrypted with SSL, make sure to update the url protocol to `https://`.
+:heavy_check_mark:|`PHOTOVIEW_API_ENDPOINT`  | |Used if `PHOTOVIEW_SERVE_UI` is disabled. The url from where the API can be accessed publicly.
+:heavy_check_mark:|`PHOTOVIEW_UI_ENDPOINT` | |Used if `PHOTOVIEW_SERVE_UI` is disabled. The url from where the UI can be accessed publicly.
 
 ## General
-
-### `PHOTOVIEW_MEDIA_CACHE`
-
-Filepath for where to store generated media such as thumbnails and optimized videos.
-Defaults to `./photo_cache`.
-
-### `MAPBOX_TOKEN`
-
-To enable map related features, you need to create a mapbox token.
-A token can be generated for free at https://account.mapbox.com/access-tokens/
-It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
+:heavy_check_mark:|`PHOTOVIEW_MEDIA_CACHE`| `./photo_cache`|Filepath for where to store generated media such as thumbnails and optimized videos.
+:heavy_check_mark: |`MAPBOX_TOKEN`| |To enable map related features, you need to create a mapbox token. A token can be generated for free at https://account.mapbox.com/access-tokens/ It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
