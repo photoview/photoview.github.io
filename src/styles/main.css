@@ -120,6 +120,22 @@
   ol > li {
     @apply list-decimal;
   }
+
+  table {
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  table td,
+  table th {
+    padding: 6px;
+    border: 1px solid #dfe2e3;
+    vertical-align: top;
+  }
+
+  table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
 }
 
 @layer components {
