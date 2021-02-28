@@ -1,8 +1,7 @@
 ---
 title: Getting Started
 group: root
-
-permalink: /docs/
+priority: 2
 ---
 
 _Get Photoview up and running as quickly as possible_

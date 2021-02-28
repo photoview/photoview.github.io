@@ -109,7 +109,9 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter('docsNavGroupItems', (group, collection) => {
-    return collection.filter(x => x.data.group == group)
+    return collection
+      .filter(x => x.data.group == group)
+      .sort((a, b) => a.data.priority - b.data.priority)
   })
 }
 

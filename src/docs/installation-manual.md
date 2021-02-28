@@ -1,6 +1,7 @@
 ---
 title: Manual Setup
 group: Installation
+priority: 2
 ---
 
 This guide explains how to build, install and configure Photoview
@@ -80,9 +81,9 @@ $ cp -r api/data/ output/data/
 
 ## Setup database
 
-It's highly recommended to configure a full database,
-but Sqlite is also supported though it might be substantially slower on big media libraries.
-If you decide to Sqlite you can skip this step.
+> It's highly recommended to configure a full database,
+> but Sqlite is also supported though it might be substantially slower on big media libraries.
+> If you decide to Sqlite you can skip this step.
 
 If you don't already have a database you can configure one by following this guide on [installing MySQL on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04).
 

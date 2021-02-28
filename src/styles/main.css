@@ -114,11 +114,19 @@
   }
 
   ol {
-    @apply pl-4;
+    @apply pl-4 py-2;
   }
 
   ol > li {
     @apply list-decimal;
+  }
+
+  #primary-content ul {
+    @apply pl-4 py-2;
+  }
+
+  #primary-content ul > li {
+    @apply list-disc;
   }
 
   table {
