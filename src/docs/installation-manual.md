@@ -74,7 +74,7 @@ Make a new directory and move the needed files to it.
 
 ```shell
 $ mkdir output
-$ cp -r ui/dist/ output/dist/
+$ cp -r ui/dist/ output/ui/
 $ cp api/photoview output/photoview
 $ cp -r api/data/ output/data/
 ```
@@ -94,7 +94,7 @@ $ sudo mysql
 # Create new user named 'photoview'
 mysql> CREATE USER 'photoview'@'localhost' IDENTIFIED BY 'Photo_Secret12345';
 # Create new database named 'photoview'
-mysql> CREATE DATABASE 'photoview';
+mysql> CREATE DATABASE photoview;
 # Grant user full access to the newly created database
 mysql> GRANT ALL PRIVILEGES ON photoview.* TO 'photoview'@'localhost';
 ```
