@@ -37,12 +37,16 @@ this hardens security significantly, as your media can be `read-only`, meaning t
 - **Closely tied to the file system**. The website presents the images found on the local filesystem of the server, directories are mapped to albums.
 - **User management**. Each user is mapped to one or more paths on the local filesystem, photos within that path can be accessed by that user.
 - **Sharing**. Albums, as well as individual media, can easily be shared with a public link, the link can optionally be password protected.
-- **Made for photography**. Photoview is built with photographers in mind, and thus supports **RAW** file formats and **EXIF** parsing.
+- **RAW support**. [Darktable](https://www.darktable.org/) is used to automatically convert RAW files from a large range of [supported cameras](https://www.darktable.org/resources/camera-support/).
+- **EXIF parsing**. All media is scanned for EXIF data and shown next to the media when selected.
+- **Duplication detection**. If a RAW and JPEG image pair is found next to each other, only one image show up and the scanner will use the JPEG image, instead of generating a new in the cache.
 - **Video support**. Many common video formats are supported. Videos will automatically be optimized for web.
 - **Timeline**. Media will be shown on a timeline that sorts media by the day they were created and groups them by day.
+- **World map**. Photos with embedded GPS coordinates are presented on a world map.
 - **Face recognition**. Faces will automatically be detected in photos, and photos of the same person will be grouped together.
 - **Performant**. Thumbnails are automatically generated and photos first load when they are visible on the screen. In full screen, thumbnails are displayed until the high resolution image has been fully loaded.
 - **Secure**. All media resources are protected with a cookie-token, all passwords are properly hashed, and the API uses a strict [CORS policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) when necessary.
+- **Database support**. Both MySQL, Postgres and Sqlite databases are supported.
 
 ## How do I get started?
 
