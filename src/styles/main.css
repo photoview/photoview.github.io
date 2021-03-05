@@ -126,7 +126,7 @@
   }
 
   #primary-content ul > li {
-    @apply list-disc;
+    @apply list-disc py-1;
   }
 
   table {
