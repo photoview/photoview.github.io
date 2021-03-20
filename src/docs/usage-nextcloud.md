@@ -1,17 +1,17 @@
 ---
-title: Using with Nextcloud
+title: Using with Nextcloud/Owncloud
 group: Usage
 ---
 
 Photoview can be configured to grab media from [Nextcloud](https://nextcloud.com/).
 
-## Locating Nextcloud files on the filesystem
+## Locating Nextcloud/Owncloud files on the filesystem
 
-All files uploaded to Nextcloud are located in the folder called `data/` at the location where Nextcloud is installed.
-Inside that folder you will find another folder for each Nextcloud user.
+All files uploaded to Nextcloud/Owncloud are located in the folder called `data/` at the location where Nextcloud/Owncloud is installed.
+Inside that folder you will find another folder for each Nextcloud/Owncloud user.
 All files uploaded by a user is located inside their respective folders.
 
-Now find the path to where your Nextcloud media is located, and copy it as we will need it later.
+Now find the path to where your Nextcloud/Owncloud media is located, and copy it as we will need it later.
 The path could look somthing like this:
 
     ~/nextcloud/data/example_user/files/Photos
@@ -24,7 +24,7 @@ The next step will be to add this path to the desired Photoview user.
 
 > If you are not running Photoview in Docker you can skip this step.
 
-Before the Nextcloud files can be accessed by the Photoview container,
+Before the Nextcloud or Owncloud files can be accessed by the Photoview container,
 they must first be mounted as a [volume](https://docs.docker.com/storage/volumes/).
 
 For docker-compose this can be done by adding the volume to the `docker-compose.yml` configuration file for Photoview.
@@ -50,4 +50,4 @@ You can now scan the user and the pictures and videos from nextcloud will appear
 
 ## Keep Photoview updated automatically
 
-If you don't want to press the `Scan` button manually each time you've added new files to Nextcloud, you can [configure a periodic scanner](/docs/usage-settings/#periodic-scanner) to automatically scan for changes.
+If you don't want to press the `Scan` button manually each time you've added new files to Nextcloud/Owncloud, you can [configure a periodic scanner](/docs/usage-settings/#periodic-scanner) to automatically scan for changes.
