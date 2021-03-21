@@ -27,7 +27,11 @@ sudo systemctl restart apache2
 ```
 Now you'll need a VirtualHost entry for your photoview proxy. Here's an example below, of a virtual host file entry for Photoview.  These are typically stored in /etc/apache2/sites-available. 
 
-
+You can create one with:
+```
+sudo nano /etc/apache2/sites-available/yoururl.ca.conf
+```
+You'll then want to populate it like below, changing the variables below to reflect your own domains:
 
 ```
 <VirtualHost *:80>
@@ -42,8 +46,12 @@ Now you'll need a VirtualHost entry for your photoview proxy. Here's an example 
 ```
 *For more information on VirtualHosts, [take a look at this article.](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04)*
 
-Once you've created this VirtualHost entry, restart your server once more with:
+Once you've created this VirtualHost entry, enable the entry with:
 
+```
+sudo a2ensite yoururl.ca.conf
+```
+restart your server once more with:
 ```
 sudo systemctl restart apache2
 ```
