@@ -9,10 +9,15 @@ on a fresh installation of `Ubuntu 20.02.2 LTS` to run directly on the system wi
 
 ## Preparation
 
-Make sure your computer is up to date.
+Make sure your computer is up to date and install the required dependencies needed to build and run Photoview.
 
 ```shell
-$ sudo apt update && sudo apt upgrade
+$ sudo add-apt-repository ppa:strukturag/libheif
+$ sudo add-apt-repository ppa:strukturag/libde265
+
+$ sudo apt update && sudo apt -y upgrade
+$ sudo apt -y install git curl libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev gcc gpg libdlib19 ffmpeg exiftool libheif1 g++-aarch64-linux-gnu libc6-dev-arm64-cross libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config build-essential software-properties-common libheif1 libde265-0
+
 ```
 
 Install Golang by following the instructions for Linux from their [Download and install Go](https://golang.org/doc/install) page, the steps should be something like the following.
@@ -33,28 +38,29 @@ $ go version
 # Expected output: go version go1.16 linux/amd64
 ```
 
-Now install Node and NPM if you've not done so already.
+Now install Node 16 and NPM if you've not done so already (it installs npm automatically)
 
 ```shell
-$ sudo apt install nodejs npm
-```
-
-Next install the required dependencies needed to build and run Photoview.
-
-```shell
-# Dependencies needed for go-face
-$ sudo apt install libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev
+$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
 ```
 
 ## Download and build Photoview
 
 Navigate to [Photoview Releases](https://github.com/photoview/photoview/releases) and download the source code for the latest version, extract it and open the extracted directory in the terminal.
 
+```shell
+$ cd /opt
+$ git clone https://github.com/photoview/photoview.git
+$ cd photoview/
+```
+
 ### Build the Web user-interface
 
 ```shell
 $ cd ui/
-$ npm install && npm run build
+$ npm install
+$ npm run build
 ```
 
 This builds the UI source code and saves it in the `ui/dist/` directory.
@@ -63,7 +69,7 @@ This builds the UI source code and saves it in the `ui/dist/` directory.
 
 ```shell
 $ cd api/
-$ cd ./api && go build -v -o photoview .
+$ go build -v -o photoview .
 ```
 
 This builds the server executable to `api/photoview`.
@@ -73,10 +79,11 @@ This builds the server executable to `api/photoview`.
 Make a new directory and move the needed files to it.
 
 ```shell
-$ mkdir output
-$ cp -r ui/dist/ output/ui/
-$ cp api/photoview output/photoview
-$ cp -r api/data/ output/data/
+$ cd /opt/photoview
+$ mkdir app
+$ cp -r ui/dist/ app/ui/
+$ cp api/photoview app/photoview
+$ cp -r api/data/ app/data/
 ```
 
 ## Setup database
@@ -92,14 +99,14 @@ If you've not done already, configure a new database and user to use with Photov
 ```shell
 $ sudo mysql
 # Create new user named 'photoview'
-mysql> CREATE USER 'photoview'@'localhost' IDENTIFIED BY 'Photo_Secret12345';
+mysql> CREATE USER 'photoview'@'localhost' IDENTIFIED BY 'Photo_Secret#12345';
 # Create new database named 'photoview'
 mysql> CREATE DATABASE photoview;
 # Grant user full access to the newly created database
 mysql> GRANT ALL PRIVILEGES ON photoview.* TO 'photoview'@'localhost';
 ```
 
-This will create a new user `photoview` with the password `PhotoS#cret12345` and a new database named `photoview`.
+This will create a new user `photoview` with the password `Photo_Secret#12345` and a new database named `photoview`.
 
 When you're done you should have a running MySQL database with a new user identified by a username and password and an empty database.
 
@@ -111,7 +118,7 @@ We will use that to configure Photoview.
 Copy the `api/example.env` file to the output directory, and name it `.env`.
 
 ```shell
-$ cp api/example.env output/.env
+$ cp api/example.env app/.env
 ```
 
 To configure the database to use our MySQL database, edit `PHOTOVIEW_MYSQL_URL` to match our database configuration.
