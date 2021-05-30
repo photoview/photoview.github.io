@@ -9,17 +9,15 @@ on a fresh installation of `Ubuntu 20.02.2 LTS` to run directly on the system wi
 
 ## Preparation
 
-Make sure your computer is up to date and install the required dependencies needed to build and run Photoview.
+Make sure your computer is up to date, then install the necessary packages, add the apt sources, then install the necessary dependencies required to build and run Photoview.
 
 ```shell
+$ sudo apt update && sudo apt -y upgrade
+$ sudo apt install git curl software-properties-common
 $ sudo add-apt-repository ppa:strukturag/libheif
 $ sudo add-apt-repository ppa:strukturag/libde265
-
-$ sudo apt update && sudo apt -y upgrade
-$ sudo apt -y install git curl libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev gcc gpg libdlib19 ffmpeg exiftool libheif1 \
-  g++-aarch64-linux-gnu libc6-dev-arm64-cross libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config \
-  build-essential software-properties-common libheif1 libde265-0
-
+$ sudo apt -y install libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev build-essential \
+  libdlib19 libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
 ```
 
 Install Golang by following the instructions for Linux from their [Download and install Go](https://golang.org/doc/install) page, the steps should be something like the following.
@@ -44,7 +42,7 @@ Now install Node 16 and NPM if you've not done so already (it installs npm autom
 
 ```shell
 $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
+$ sudo apt -y install nodejs
 ```
 
 ## Download and build Photoview
@@ -156,6 +154,12 @@ Photoview can use `ffmpeg` to convert video files that cannot be played directly
 
 ```shell
 $ sudo apt install ffmpeg
+```
+
+Photoview has a built-in `exiftool`, if you want to use an external one you can install it.
+
+```shell
+$ sudo apt install exiftool
 ```
 
 ## Post installation
