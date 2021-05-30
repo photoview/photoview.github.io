@@ -16,7 +16,9 @@ $ sudo add-apt-repository ppa:strukturag/libheif
 $ sudo add-apt-repository ppa:strukturag/libde265
 
 $ sudo apt update && sudo apt -y upgrade
-$ sudo apt -y install git curl libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev gcc gpg libdlib19 ffmpeg exiftool libheif1 g++-aarch64-linux-gnu libc6-dev-arm64-cross libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config build-essential software-properties-common libheif1 libde265-0
+$ sudo apt -y install git curl libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev gcc gpg libdlib19 ffmpeg exiftool libheif1 \
+  g++-aarch64-linux-gnu libc6-dev-arm64-cross libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config \
+  build-essential software-properties-common libheif1 libde265-0
 
 ```
 
