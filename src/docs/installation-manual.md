@@ -9,14 +9,23 @@ on a fresh installation of `Ubuntu 20.02.2 LTS` to run directly on the system wi
 
 ## Preparation
 
-Make sure your computer is up to date, then install the necessary packages, add the apt sources, then install the necessary dependencies required to build and run Photoview.
+Make sure you got the necessary tools and libraries in order to build and run Photoview.
 
 ```shell
-$ sudo apt update && sudo apt -y upgrade
-$ sudo apt install git curl software-properties-common
+# Make sure your computer is up to date
+$ sudo apt update
+$ sudo apt upgrade
+
+# Install tools used in this guide
+$ sudo apt install git curl wget
+
+# Install necessary repositories
+$ sudo apt install software-properties-common
 $ sudo add-apt-repository ppa:strukturag/libheif
 $ sudo add-apt-repository ppa:strukturag/libde265
-$ sudo apt -y install libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev build-essential \
+
+# Install dependencies required to build and run Photoview
+$ sudo apt install libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev build-essential \
   libdlib19 libdlib-dev libblas-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
 ```
 
@@ -42,7 +51,7 @@ Now install Node 16 and NPM if you've not done so already (it installs npm autom
 
 ```shell
 $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-$ sudo apt -y install nodejs
+$ sudo apt install nodejs
 ```
 
 ## Download and build Photoview
@@ -156,7 +165,9 @@ Photoview can use `ffmpeg` to convert video files that cannot be played directly
 $ sudo apt install ffmpeg
 ```
 
-Photoview has a built-in `exiftool`, if you want to use an external one you can install it.
+### Exif parsing
+
+Photoview can optionally use `exiftool` to parse EXIF metadata faster and more reliably. Without it it will use its internal exif parser.
 
 ```shell
 $ sudo apt install exiftool
