@@ -25,7 +25,7 @@ $ sudo add-apt-repository ppa:strukturag/libheif
 $ sudo add-apt-repository ppa:strukturag/libde265
 
 # Install dependencies required to build and run Photoview
-$ sudo apt install libdlib-dev libblas-dev liblapack-dev libjpeg-turbo8-dev build-essential \
+$ sudo apt install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev build-essential \
   libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
 ```
 
