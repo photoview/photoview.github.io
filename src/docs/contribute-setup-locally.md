@@ -14,7 +14,22 @@ How to set up a development environment locally.
 ### Start API server
 
 Make sure [golang](https://golang.org/) is installed.
-Then run the following commands:
+
+Some C libraries are needed to compile the API, see [go-face requirements](https://github.com/Kagami/go-face#requirements) for more details. They can be installed as shown below:
+
+```bash
+# Ubuntu
+sudo add-apt-repository ppa:strukturag/libheif
+sudo add-apt-repository ppa:strukturag/libde265
+sudo apt-get update
+sudo apt-get install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev libheif-dev
+# Debian
+sudo apt-get install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg62-turbo-dev libheif-dev
+# macOS
+brew install dlib libheif
+```
+
+Then run the following command to start the API server:
 
 ```bash
 cd ./api && go run server.go

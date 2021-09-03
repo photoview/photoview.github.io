@@ -6,7 +6,7 @@ priority: 1
 permalink: /docs/
 ---
 
-> TODO: Add a screenshot
+{% optimizedImage './timeline.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
 
 Photoview is a simple and user-friendly photo gallery that's made for photographers
 and aims to provide an easy and fast way to navigate directories, with thousands of high resolution photos.
