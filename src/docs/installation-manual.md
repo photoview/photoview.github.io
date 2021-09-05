@@ -5,7 +5,7 @@ priority: 2
 ---
 
 This guide explains how to build, install and configure Photoview
-on a fresh installation of `Ubuntu 20.02.2 LTS` to run directly on the system without using Docker.
+on a fresh installation of `Ubuntu 20.04 LTS` to run directly on the system without using Docker.
 
 ## Preparation
 
