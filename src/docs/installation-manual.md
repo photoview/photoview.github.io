@@ -72,7 +72,7 @@ $ npm install
 $ npm run build
 ```
 
-This builds the UI source code and saves it in the `ui/dist/` directory.
+This builds the UI source code and saves it in the `ui/build/` directory.
 
 ### Build the API back-end
 
@@ -90,7 +90,7 @@ Make a new directory and move the needed files to it.
 ```shell
 $ cd /opt/photoview
 $ mkdir app
-$ cp -r ui/dist/ app/ui/
+$ cp -r ui/build/ app/ui/
 $ cp api/photoview app/photoview
 $ cp -r api/data/ app/data/
 ```
