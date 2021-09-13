@@ -15,7 +15,17 @@ volumes:
   - /path/to/hard-drive/photoview_cache:/app_cache
 ```
 
-If you are not using Docker, simply set the `PHOTOVIEW_MEDIA_CACHE` environment variable to the desired path. Eg. `export PHOTOVIEW_MEDIA_CACHE=/path/to/hard-drive/photoview_cache`
+If you are not using Docker, simply set the `PHOTOVIEW_MEDIA_CACHE` environment variable to the desired path. E.g.:
+- Set the variable in `.env`,
+- Or alternatively, `export PHOTOVIEW_MEDIA_CACHE=/path/to/hard-drive/photoview_cache`
+
+## My PHOTOVIEW_MEDIA_CACHE is very large! Is it safe to delete it?
+
+The size of the media cache will scale with the size of your photo library, and as such it can become very large.
+If you delete it, it will be recreated if you continue to use Photoview.
+As such it is not advisable to delete the cache if you are still using Photoview, unless, perhaps, if you are significantly changing the library of photos on disk.
+If you want to permanently uninstall Photoview, then yes, feel free to remove/delete the directory so as not to waste storage space.
+In this case, you will also likely want to remove your database.
 
 ## I click "Scan All" but nothing happens
 
