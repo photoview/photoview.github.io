@@ -7,7 +7,6 @@ priority: 3
 You can optionally use `systemd` to manage photoview and start the program at boot.
 It also allows the program to run as its own system user, enhancing the security of the process.
 
-To get started, follow [Preparation](), [Download and build Photoview](), [Build the Web user-interface](), and [Build the API back-end]().
 
 To get started, follow the [Manual Setup Installation guild]().
 When you get to the [Copy needed files]() section, replace those steps with the steps listed below.
