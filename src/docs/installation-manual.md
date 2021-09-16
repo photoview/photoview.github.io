@@ -99,7 +99,7 @@ $ cp -r api/data/ app/data/
 
 > It's highly recommended to configure a full database,
 > but Sqlite is also supported though it might be substantially slower on big media libraries.
-> If you decide to Sqlite you can skip this step.
+> If you decide to use Sqlite, you can skip this step.
 
 If you don't already have a database you can configure one by following this guide on [installing MySQL on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04).
 
@@ -176,12 +176,14 @@ $ sudo apt install exiftool
 ## Post installation
 
 If you've made it this far, you should be able to start Photoview.
+(Skip this step if you are using the `systemd` unit file.)
 
 ```shell
 $ ./photoview
 ```
 
 Once it has started it should print something like the following.
+(If using the `systemd` unit, this message should be visible in the output of the `systemctl status` command.)
 
 ```
 Photoview UI public endpoint ready at http://localhost:4001/
