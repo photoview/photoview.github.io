@@ -40,6 +40,7 @@ module.exports = {
         100: '28rem',
         '572px': '572px',
         '05': '0.2rem',
+        '40rem': '40rem',
       },
     },
   },

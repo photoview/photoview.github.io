@@ -22,6 +22,8 @@
           <img class="my-8" src="{{ '/images/logo-large.svg' }}" alt="Photoview logo" height="60">
         </a>
 
+        <input id="nav-search-field" type="search" placeholder="Search" class="pointer mb-4 w-full py-2 px-3 text-sm border border-gray-200 rounded-md" />
+
         {% macro navEntryItem(entry) %}
         <li>
           <a
@@ -95,6 +97,18 @@
     {{ content | safe }}
     </main>
 
+    </div>
+  </div>
+
+  <div id="search-overlay" class="hidden">
+    <div id="search-dimmer" class="fixed top-0 left-0 w-full h-full bg-black opacity-10"></div>
+    <div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white shadow-lg border border-gray-200 rounded-md p-4 w-40rem overflow-y-auto h-3/4" role="dialog">
+
+      <input id="search-field" type="search" class="mb-4 w-full py-2 px-3 text-sm border border-gray-200 rounded-md" placeholder="Search" aria-autocomplete="list" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search" aria-controls="search-results-box" />
+
+      <div role="listbox" aria-label="Search" id="search-results-box" class="">
+        Loading results...
+      </div>
     </div>
   </div>
 

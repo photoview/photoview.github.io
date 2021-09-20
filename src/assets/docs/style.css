@@ -1,3 +1,47 @@
 #primary-content {
   font-size: 0.95rem;
 }
+
+.search-results-page-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+
+  display: block;
+  color: black;
+  border-bottom: 1px solid #666;
+  width: 100%;
+}
+
+ul.search-results-page-section {
+  margin-bottom: 16px;
+}
+
+ul.search-results-page-section > li {
+  margin: 8px 0;
+}
+
+ul.search-results-page-section a {
+  display: block;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+ul.search-results-page-section a:hover {
+  background-color: #f2f7fb;
+}
+
+.search-results-section-heading {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: black;
+}
+
+.search-results-section-content {
+  color: #555;
+  font-size: 0.9em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
