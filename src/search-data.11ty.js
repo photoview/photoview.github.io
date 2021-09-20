@@ -10,7 +10,7 @@ function stripContent(markdownText) {
   let plainText = md.plainText
 
   plainText = [/{%.*%}/g, /```.*/g].reduce(
-    (acc, match) => acc.replaceAll(match, ''),
+    (acc, match) => acc.replace(match, ''),
     plainText
   )
 
@@ -30,7 +30,7 @@ class SearchData {
     let result = articles.map(article => {
       const headings = [
         ...article.template.inputContent
-          .replaceAll(/```(.|\n)+?```/g, '') // Remove code blocks
+          .replace(/```(.|\n)+?```/g, '') // Remove code blocks
           .matchAll(/^#+\s?(.*)$/gm),
       ]
 
@@ -46,7 +46,7 @@ class SearchData {
         content: stripContent(
           content
             .slice(0, content.indexOf(headings[0][0]))
-            .replaceAll(/\-{3}.*\-{3}/gs, '')
+            .replace(/\-{3}.*\-{3}/gs, '')
         ),
       })
 
