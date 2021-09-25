@@ -195,3 +195,9 @@ From here enter a new username and password. For the `Photo Path` enter the file
 Next click `Setup Photoview` to create the new admin user.
 
 Now navigate to the Settings page and click on Scan All. The scanner should now begin to scan for new media.
+
+## Updating
+
+Short version, you will download the latest version, rebuild, and copy the needed files. You can follow the "Download and build Photoview" section above.
+
+If you've made no changes to the database, photo directories, or cache directories you should be done.
