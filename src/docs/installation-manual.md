@@ -85,6 +85,9 @@ This builds the server executable to `api/photoview`.
 
 ### Copy needed files
 
+> If you are planning to use systemd to manage photoview and start the program at boot. Follow the instructions at [Use with systemd]().
+> This section is still useful to verify your configuration is correct before setting up systemd.
+
 Make a new directory and move the needed files to it.
 
 ```shell
@@ -131,7 +134,8 @@ $ cp api/example.env app/.env
 ```
 
 To configure the database to use our MySQL database, edit `PHOTOVIEW_MYSQL_URL` to match our database configuration.
-Replace `user`, `password` and `dbname`.
+Replace `user`, `password` and `dbname`. You may need to comment out other lines that are more meant for testing and development.
+Example .env file contents are below.
 
 ```
 PHOTOVIEW_DATABASE_DRIVER=mysql
