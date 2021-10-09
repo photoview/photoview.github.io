@@ -11,7 +11,7 @@ First setup Photoview via the regular docker-compose setup [here](https://photov
 
 ```
 photos.qpqp.dk {
-reverse_proxy http://qpqp.dk:8000
+reverse_proxy http://photos.qpqp.dk:8000
 }
 ```
 
