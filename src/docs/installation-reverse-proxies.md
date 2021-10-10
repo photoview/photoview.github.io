@@ -3,6 +3,20 @@ title: Reverse Proxy
 group: Installation
 ---
 
+## Using Caddy
+
+Caddy is a great webserver written in go that automatically handles all SSL certificates without the need for certbot.
+
+First setup Photoview via the regular docker-compose setup [here](https://photoview.github.io/docs/getting-started/). Then after installing [Caddy](https://caddyserver.com/docs/install) it's time to setup your Caddyfile. Simply edit your caddyfile located at /etc/caddy/Caddyfile to the following (adjust to your domain).
+
+```
+photos.qpqp.dk {
+reverse_proxy http://photos.qpqp.dk:8000
+}
+```
+
+Then all we need to do now is `systemctl reload caddy` and then your photoview instance should now be accessible via https://photos.qpqp.dk with SSL and without the need of specifiying a port. That's it!
+
 ## Using Apache VirtualHosts
 
 If you are running the docker for Photoview on the same machine that is hosting your Nextcloud/Owncloud setup, and want them both to be accessible via the standard web port 80 - you'll need to setup a reverse proxy on your owncloud webserver to achieve that. There are many guides online going into more detail on this general type of setup you can refer to, [like this one here](https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04).
