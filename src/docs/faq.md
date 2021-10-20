@@ -16,6 +16,7 @@ volumes:
 ```
 
 If you are not using Docker, simply set the `PHOTOVIEW_MEDIA_CACHE` environment variable to the desired path. E.g.:
+
 - Set the variable in `.env`,
 - Or alternatively, `export PHOTOVIEW_MEDIA_CACHE=/path/to/hard-drive/photoview_cache`
 
@@ -37,3 +38,31 @@ To do this execute the following command `docker-compose exec photoview /bin/bas
 ## Where do I find logging information
 
 Navigate to the directory where your `docker-compose.yml` file lies, and execute `docker-compose logs`.
+
+## I forgot the password to the admin user, is there a way to reset it?
+
+Yes, but you will have to update the password manually in the database.
+
+If you are using the default docker-compose setup, you can connect to the database by running the following command.
+
+```shell
+$ docker-compose exec db mysql -uphotoview -pphotosecret photoview
+```
+
+Next you will have to manually hash a new password using the `bcrypt` hashing algorithm.
+The easiest way to do so it using an online tool like [bcrypt-generator.com](https://bcrypt-generator.com/).
+
+You can run the following SQL query to get a table of users.
+
+```shell
+> SELECT * FROM users;
+```
+
+To update the password of one of the users, run the following. But replace `$2a$12$APn0mVXrxjNnKencpxBFWe82SMzeaUInvJDidZButEI9CCk3x.UAO` with your own generated password hash,
+and `admin` with the username of your admin user.
+
+```shell
+> UPDATE users SET password='$2a$12$APn0mVXrxjNnKencpxBFWe82SMzeaUInvJDidZButEI9CCk3x.UAO' WHERE username='admin';
+Query OK, 1 row affected (0.011 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+```
