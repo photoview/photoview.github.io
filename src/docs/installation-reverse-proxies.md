@@ -3,6 +3,8 @@ title: Reverse Proxy
 group: Installation
 ---
 
+> TODO: Reverse proxy with [Traefik](https://doc.traefik.io/traefik/providers/docker/) + Docker
+
 ## Using Caddy
 
 Caddy is a great webserver written in go that automatically handles all SSL certificates without the need for certbot.

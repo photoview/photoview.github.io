@@ -4,11 +4,92 @@ group: Installation
 priority: 1
 ---
 
-> TODO: A more detailed guide than getting started explaining how to configure with docker.
->
-> - Setup with Docker directly, without docker-compose
-> - Setup with docker-compose
-> - Reverse proxy with [Traefik](https://doc.traefik.io/traefik/providers/docker/)
+By far the easiest way to get up and running with Photoview is by running it inside a Docker container.
+With Docker, all dependencies are automatically installed and ready to go.
+If you are completeley new to Docker and want to learn more, check out this [article by FreeCodeCamp][docker-simplified].
+
+To better organise the Docker containers, a tool called [Docker Compose][docker-compose] can be used.
+This lets you configure containers in a `yaml` file, and quickly start all the configured containers at once.
+Although this tool can't do anything you can't already to with Docker alone, it simplifes the process.
+
+[docker-simplified]: https://www.freecodecamp.org/news/docker-simplified-96639a35ff36/
+[docker-compose]: https://docs.docker.com/compose/
+
+## Setup with Docker Compose
+
+> Prerequisite: Docker Engine and Docker Compose is installed on your server.
+> See [Install Docker Engine][docker-install] and [Install Docker Compose][install-docker-compose] on how to do so.
+
+To configure Photoview using Docker Compose, first copy the contents of [docker-compose.example.yml][docker-compose.example.yml],
+and save it to a file called `docker-compose.yml`.
+
+Within the file you will find two services: the Photoview server itself named `photoview` and a MariaDB database named `db`.
+The Photoview service is already configured with the database.
+
+### Configuring docker-compose.yml
+
+The compose file is setup to work without any modifications. If you just want to get started skip to the [next section](#running-docker-compose.yml).
+
+But you might want to make a few changes to fit your setup:
+
+#### Port
+
+You can change the port that Photoview will be running on under `services.photoview.ports`.
+By default the value is `8000:80`, this means that port `80` inside the container will be mapped to `8000` on the host machine.
+Eg. if you want your instance to run on port `1234` instead, change the value to `1234:80`.
+Notice that the port inside the container `80` matches the value of `PHOTOVIEW_LISTEN_PORT=80` under `services.photoview.environment`.
+
+#### Environment variables
+
+Under `services.photoview.environment` a number of environment variables are defined
+to configure various parts of Photoview. For a detailed description of all available environment variables,
+see [Environment variables](/docs/installation-environment-variables/).
+
+One thing that you might want to configure here is the `MAPBOX_TOKEN` variable.
+This is needed if you want to use map related features, like the Places page.
+A token can be generated for free on [Mapbox's website][mapbox-access-token], after you create an account.
+
+#### Volumes
+
+For Photoview to find your media, your files must be mounted inside the Photoview container using one or more [bind mounts][docker-bind-mount].
+This is configured under the `services.photoview.volumes` path in the `docker-compose.yml` file.
+
+By default the only bind mount is: `./photos_path:/photos:ro`.
+
+This line should be interpreted as `<HOST_PATH>:<CONTAINER_PATH>:ro`,
+it means that `<HOST_PATH>` on your machine will be accessible as `<CONTAINER_PATH>` inside the Photoview container.
+When you later have to configure where Photoview should look for your files, you should provide the path within the container, ie. the `<CONTAINER_PATH>`.
+
+The `:ro` part at the end, means that the files will be mounted as `read-only` and it will not be possible for Photoview to change your files.
+Although this part is optional, it is recommended to increase security.
+
+You can add as many bind mounts as you'd like. For example if your media is stored in the `Pictures` directory of your home user,
+you might want to add a bind mount like so: `/home/ben/Pictures:/bens_pictures`. Now the media will be accessible from `/bens_pictures` within the container.
+
+### Running docker-compose.yml
+
+To start the docker containers specified inside the `docker-compose.yml` file, run the following command:
+
+```shell
+$ docker-compose up -d
+```
+
+This will start the containers, `-d` means that it will do this in the background.
+When the system has started, you can access it from `http://localhost:8000`, unless you specified a custom port.
+
+Below are some other commonly used Docker Compose commands.
+
+```shell
+$ docker-compose down # stop the containers
+$ docker-compose logs # show the logs of the containers
+$ docker-compose ps   # show status of the running containers
+```
+
+[docker-install]: https://docs.docker.com/engine/install/
+[install-docker-compose]: https://docs.docker.com/compose/install/
+[docker-bind-mount]: https://docs.docker.com/storage/bind-mounts/
+[docker-compose.example.yml]: https://github.com/photoview/photoview/blob/master/docker-compose.example.yml
+[mapbox-access-token]: https://account.mapbox.com/access-tokens/
 
 ## Docker tags and versioning
 

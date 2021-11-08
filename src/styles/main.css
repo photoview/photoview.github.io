@@ -12,7 +12,7 @@
   h4,
   h5,
   h6 {
-    @apply text-default pb-2;
+    @apply text-default;
   }
 
   h1:not(:first-child),
@@ -25,19 +25,19 @@
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-4xl pb-2;
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-3xl pb-2;
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-2xl pb-2;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-lg font-bold;
   }
 
   /* Header anchors */
