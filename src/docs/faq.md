@@ -35,6 +35,18 @@ If you are using Docker, make sure that your media is properly mounted. If you a
 To troubleshoot this, you can enter the container and check that the media is present.
 To do this execute the following command `docker-compose exec photoview /bin/bash`, then list the mounted directory with `ls /photos`.
 
+## The scanner is mostly working but it randomly stops before it's finished
+
+Check the server logs with `docker-compose logs` and look for `signal: killed` errors, similar to the one below:
+
+```text
+Failed to begin database transaction: failed to process photo: <...>: signal: killed
+```
+
+This error is thrown if the server doesn't have enough resources to process the media, and the operating system kills some worker processes to free up resources.
+To circumvent that, you can reduce the number of [concurrent workers](/docs/usage-settings/#concurrent-workers).
+Try setting it to `1` and see if that fixes the problem.
+
 ## Where do I find logging information
 
 Navigate to the directory where your `docker-compose.yml` file lies, and execute `docker-compose logs`.
