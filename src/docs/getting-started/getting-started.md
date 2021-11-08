@@ -16,7 +16,7 @@ Make a new `docker-compose.yml` file, and copy the content of [docker-compose.ex
 
 Edit `docker-compose.yml`, find the comments starting with `Change This:`, and change the values, to properly match your setup. If you are just testing locally, you don't have to change anything.
 
-For more details see [Configuring Docker](installation-docker)
+For more details see [Setup with Docker](/docs/installation-docker/)
 
 ## Starting the server
 

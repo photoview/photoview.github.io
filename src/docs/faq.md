@@ -33,7 +33,7 @@ In this case, you will also likely want to remove your database.
 If you are using Docker, make sure that your media is properly mounted. If you are unsure about that see [Setup with Docker](/docs/installation-docker/).
 
 To troubleshoot this, you can enter the container and check that the media is present.
-To do this execute the following command `docker-compose exec photoview /bin/bash`, then list the mounted directory with `ls /photos`.
+To do this execute the following command `docker-compose exec -it photoview /bin/bash`, then list the mounted directory with `ls /photos`.
 
 ## The scanner is mostly working but it randomly stops before it's finished
 
@@ -58,7 +58,7 @@ Yes, but you will have to update the password manually in the database.
 If you are using the default docker-compose setup, you can connect to the database by running the following command.
 
 ```shell
-$ docker-compose exec db mysql -uphotoview -pphotosecret photoview
+$ docker-compose exec -it db mysql -uphotoview -pphotosecret photoview
 ```
 
 Next you will have to manually hash a new password using the `bcrypt` hashing algorithm.
