@@ -40,7 +40,7 @@ To do this execute the following command `docker-compose exec photoview /bin/bas
 Check the server logs with `docker-compose logs` and look for `signal: killed` errors, similar to the one below:
 
 ```text
-Failed to begin database transaction: failed to process photo: <...>: signal: killed
+Failed to begin database transaction: failed to process photo: &lt;...&gt;: signal: killed
 ```
 
 This error is thrown if the server doesn't have enough resources to process the media, and the operating system kills some worker processes to free up resources.
