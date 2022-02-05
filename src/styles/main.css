@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
   h4,
   h5,
   h6 {
-    @apply text-default;
+    @apply text-default font-display;
   }
 
   h1:not(:first-child),

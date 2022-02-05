@@ -7,7 +7,18 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      sans: ['Lato', 'sans-serif'],
+      sans: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen-Sans',
+        'Ubuntu',
+        'Cantarell',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
+      display: ['Heebo', 'sans-serif'],
     },
     screens: {
       sm: '640px',
