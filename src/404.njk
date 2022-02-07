@@ -1,0 +1,24 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found - Photoview</title>
+  <link rel="stylesheet" href="{{ '/main.css' | url }}">
+  {% include 'analytics.njk' %}
+</head>
+<body class="bg-gray-50">
+  {% include 'header.njk' %}
+
+  <main class="max-w-screen-lg mx-auto mt-8 text-center">
+    <h1>Page not found</h1>
+    <p>The page you requested doesn't exist, go back to the <a href="/">landing page</a></p>
+  </main>
+
+  <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+</body>
+</html>
