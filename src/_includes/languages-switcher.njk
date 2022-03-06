@@ -1,0 +1,29 @@
+{% if translationKey %}
+  {% set translatedUrl = "" %}
+  {% for lg in languages.languages %}
+    {% if loop.first %}
+      <select class="ml-5" id="lg-switcher" onchange="changeLanguage()">
+    {% endif %}
+
+    {% for item in collections.all %}
+      {% if translatedUrl == "" and item.data.translationKey == translationKey and item.data.locale == lg.code %}
+        {% set translatedUrl = item.url %}
+      {% endif %}
+    {% endfor %}
+
+    <option class="lg-switcher-item" {% if lg.code == locale %} selected="selected" {% endif %} value="{{ translatedUrl }}">
+      {{ lg.label }}
+    </option>
+
+    {% if loop.last %}
+      </select>
+    {% endif %}
+    {% set translatedUrl = "" %}
+  {% endfor %}
+
+  <script>
+    function changeLanguage() {
+      document.location.href=document.getElementById("lg-switcher").value;
+    }
+  </script>
+{% endif %}

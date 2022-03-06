@@ -7,7 +7,7 @@
       </a>
     </span>
     <ul class="flex h-full items-center">
-      <li class=""><a class="text-black hover:text-black no-underline hover:underline" href="{{ '/docs' | url }}">Documentation</a></li>
+      <li class=""><a class="text-black hover:text-black no-underline hover:underline" href="{{ '/' + (locale if locale else "en") + '/docs' | url }}">Documentation</a></li>
       <li class="ml-8">
         <a class="font-thin flex items-center hover:underline" href="{{ 'https://github.com/photoview/photoview' | url }}">
 
@@ -17,6 +17,9 @@
           <span class="hidden sm:block">Find on Github</span>
 
         </a>
+      </li>
+      <li>
+        {% include 'languages-switcher.njk' %}
       </li>
     </ul>
     </nav>
