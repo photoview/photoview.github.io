@@ -1,6 +1,0 @@
----
-title: Share albums and media
-group: Usage
----
-
-> TODO: Explain how to share albums and media, how to set a password and how to delete them again
