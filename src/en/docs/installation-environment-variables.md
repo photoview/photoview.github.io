@@ -16,7 +16,7 @@ Environment variables related to configuration of the database.
 |                    | `PHOTOVIEW_DATABASE_DRIVER` | `mysql` | Available options `mysql` <small>(default)</small>, `postgres` and `sqlite`. <br/> Defines what database backend is used. One of the following **MUST** be set in addition to this variable.                     |
 | <center>✓</center> | `PHOTOVIEW_MYSQL_URL`       |         | Required if the driver is `mysql`. The URL of the MySQL database to connect to. See [formatting documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name).                                     |
 | <center>✓</center> | `PHOTOVIEW_POSTGRES_URL`    |         | Required if the driver is `postgres`. The connection string of the Postgres database to connect to. See [formatting documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). |
-| <center>✓</center> | `PHOTOVIEW_SQLITE_PATH`     |         | Required if the driver is `sqlite`. Specifies the filepath for where the sqlite database should be saved.                                                                                                        |
+| <center>✓</center> | `PHOTOVIEW_SQLITE_PATH`     |         | Required if the driver is `sqlite`. Specifies the filepath for where the sqlite database should be saved. Example value: `/app/database/photoview.db`      |
 
 ## Server related
 
