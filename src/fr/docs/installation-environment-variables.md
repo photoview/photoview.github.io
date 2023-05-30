@@ -15,7 +15,7 @@ Cette page présente toutes ces variables avec une description.
 |                    | `PHOTOVIEW_DATABASE_DRIVER` | `mysql` | Choix du driver de base de données : `mysql`<small>(par défaut)</small>, `postgres` et `sqlite`. <br/> Définit quelle base de données est utilisée. Une des variables ci-dessous **DOIT** être également renseignée pour que le système fonctionne.                     |
 | <center>✓</center> | `PHOTOVIEW_MYSQL_URL`       |         | Requis si le driver est `mysql`. L'URL de la base de données MySQL à laquelle se connecter. Voir [formatting documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name).                                     |
 | <center>✓</center> | `PHOTOVIEW_POSTGRES_URL`    |         | Requis si le driver est `postgres`. La chaine de connexion de la base Postgres à laquelle se connecter. Voir [formatting documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). |
-| <center>✓</center> | `PHOTOVIEW_SQLITE_PATH`     |         | Requis si le driver est `sqlite`. Spécifie le _filepath_ sur lequel la base de données sqlite doit être enregistrée.                       |
+| <center>✓</center> | `PHOTOVIEW_SQLITE_PATH`     |         | Requis si le driver est `sqlite`. Spécifie le _filepath_ sur lequel la base de données sqlite doit être enregistrée. Valeur par exemple: `/app/database/photoview.db`                      |
 
 ## Variables liées au serveur
 
