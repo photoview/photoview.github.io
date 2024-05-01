@@ -4,7 +4,34 @@ group: Installation
 translationKey: installation-reverse-proxies
 ---
 
-> TODO: Reverse proxy with [Traefik](https://doc.traefik.io/traefik/providers/docker/) + Docker
+## Using Traefic with Docker
+
+Please read the Traefic documentation, as it provides more detailed and accurate info: [doc.traefik.io](https://doc.traefik.io/traefik/providers/docker/)
+
+Here is an example of the configuration for the docker-compose file of Photoview:
+
+Assumptions made in this config:
+- Traefic runs in host network mode,
+- Public hostname is photoview.foo.bar
+- Certificate resolver is named "le"
+- HTTPS entrypoint is named "websecure"
+
+If you enable these labels, remove the ports section
+
+```YML
+photoview:
+  ...
+  labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.photoview.rule=Host(`photoview.foo.bar`)"
+    - "traefik.http.routers.photoview.service=photoview"
+    - "traefik.http.routers.photoview.tls=true"
+    - "traefik.http.routers.photoview.tls.certresolver=le"
+    - "traefik.http.routers.photoview.entrypoints=websecure"
+    - "traefik.http.services.photoview.loadbalancer.server.port=80"
+    - "traefik.http.services.photoview.loadbalancer.server.scheme=http"
+  ...
+```
 
 ## Using Caddy
 
