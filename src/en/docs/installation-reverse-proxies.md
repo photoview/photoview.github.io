@@ -18,7 +18,7 @@ Assumptions made in this config:
 
 If you enable these labels, remove the ports section
 
-```YAML
+```
 photoview:
   ...
   labels:
