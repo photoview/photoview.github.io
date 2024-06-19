@@ -21,7 +21,7 @@ Although this tool can't do anything you can't already to with Docker alone, it 
 > Prerequisite: Docker Engine and Docker Compose is installed on your server.
 > See [Install Docker Engine][docker-install] and [Install Docker Compose][install-docker-compose] on how to do so.
 
-To configure Photoview using Docker Compose, first copy the contents of [docker-compose.example.yml][docker-compose.example.yml],
+To configure Photoview using Docker Compose, first copy the contents of [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml),
 and save it to a file called `docker-compose.yml`.
 
 Within the file you will find two services: the Photoview server itself named `photoview` and a MariaDB database named `db`.
