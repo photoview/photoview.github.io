@@ -5,7 +5,7 @@ priority: 2
 translationKey: usage-basic-overview
 ---
 
-{% optimizedImage '../../assets/images/timeline.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
+{% optimizedImage 'src/assets/images/screenshot-photos.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
 
 ## Timeline view ##
 After logging in to Photoview, you will see all of your photos in reverse time order with the newest ones first and the oldest ones at the bottom. The photos are grouped by the day they were taken. This is called the _timeline view_ and you can always return to this view by clicking the top-most icon on the panel at the left of the screen.
@@ -24,7 +24,7 @@ On the left-hand side of the screen, you have more options for how to view your 
 - **Albums** - allows you to view all photos that reside in an album on your server. In Photoview, an album is the same as a folder on your server. This means that you can have as many levels of albums as you wish (only limited by the file system of the server) and they get their names from the names of the folders in your filesystem. In album view, when you click the &#9432; on the top right of a photo, you will get a chance to set this photo as the _album cover photo_ of that album.
 In album view, you will also see a ⚙️ button next right to the name of the album. Clicking this allows you to create a _share_, essentially a _link_ to that album that you can share with your friends. By copying the link and including it in an e-mail or some other messaging service you can invite your friends to have a look at those photos in that album. You can also choose to download the album to the computer you are using to view the photos. You have the option to download the photos in full resolution or different scaled-down versions.
 - **Places** - If this feature was enabled at installation time, this presents you with a map where your photos were taken (provided that they have geocoding information, which they normally have if they are taken with a mobile phone). You can zoom in and out of the map by using the scroll wheel of your mouse. As you scroll in, you can see that the level of information about the location is becoming more and more precise. Clicking one of the pictures allows you to see all the photos from that location, using the left and right arrows to switch between them.
-- **People** - If enabled at installation time, this presents you with an array of faces that have been identified in your photos (provided that this feature was enabled when installing Photoview). When you start there are no names assigned to the faces, this is something that you have to do. More on this later.
+- **People** - If enabled at installation time, this presents you with an array of faces that have been identified in your photos. When you start there are no names assigned to the faces, this is something that you have to do. More on this later.
 - **Settings** - The last button is for changing some settings, such as adding more paths to libraries of photos that you want Photoview to present. Note that these paths have to be accessible to Photoview, and if you installed Photoview as a Docker container, the libraries would have to be visible inside the container. This is normally done through Docker Volumes. You can read more about all settings on [Settings Page](/{{ locale }}/docs/usage-settings/usage-settings/).
 
 
