@@ -9,7 +9,10 @@ translationKey: usage-basic-overview
 
 ## Timeline view ##
 After logging in to Photoview, you will see all of your photos in reverse time order with the newest ones first and the oldest ones at the bottom. The photos are grouped by the day they were taken. This is called the _timeline view_ and you can always return to this view by clicking the top-most icon on the panel at the left of the screen.
+
 At first, it seems that there are only a few rows of photos when you scroll down, but Photoview will fill the webpage with more and more photos when you continue to scroll down.
+
+You can choose if you want to see _all_ of your timeline, or if it should start from a particular point in time. You choose the time period by selecting the appropriate starting point in the drop-down box at the top left of the photos, marked "Date".
 
 In Timeline view you can do the following:
 - **Click on a photo** to display a large version of that photo. From there you can display the next photo (moving _down_ in the timeline) by clicking on the right arrow, or display the previous photo (moving _up_ in the timeline) by clicking on the left arrow. 
