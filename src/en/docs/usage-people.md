@@ -7,10 +7,10 @@ translationKey: usage-people
 ## Face recognition - the People tab ##
 Face recognition is an optional feature of Photoview that you can choose to enable at installation time. When enabled, a tab in the left-hand panel labeled "People" is present. Clicking on it will take you to the page where you can name the faces that Photoview has recognized.
 ### Labeling people ###
-{% optimizedImage 'src/assets/images/screenshot-unlabelled-people.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
+{% optimizedImage 'src/assets/images/screenshot-unlabelled-people.png', 'Unlabelled faces', 'class="block w-4/5 mx-auto my-6"' %}
 
 The first time you click on the People tab, you will be presented with an array of faces that Photoview has detected in your photos. As Photoview has no way of knowing who these people are, you will have to name them. Under each face is a label. Initially, it says "`123` **Unlabeled**" where `123`is a number representing how many pictures this face was found in. Clicking on the text "Unlabeled" allows you to input a name for the person that this face belongs to. It is up to you if you want to state the full name, just the first name or a nickname. We recommend that you choose something unique for this person so that you can tell it apart from a different person who may have the same name. If you are unsure of who it is, you may want to see all of the pictures belonging to that person. To do this, simply click on the face. This will take you to a page similar to this 
-{% optimizedImage 'src/assets/images/screenshot-manage-person.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
+{% optimizedImage 'src/assets/images/screenshot-manage-person.png', 'Manage Person', 'class="block w-4/5 mx-auto my-6"' %}
 where you can see all the pictures of that person. At the top of that page is the text "Unlabeled person". Under that are some buttons you can click. The first reads "Change label". Click this to name the person. The "Unlabeled person" now has a name!
 
 ### Merging faces ###
