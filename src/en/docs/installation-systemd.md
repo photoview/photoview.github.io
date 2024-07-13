@@ -56,7 +56,7 @@ $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.tmpfiles" "/usr/lib/tmp
 $ sudo install -d "/var/cache/photoview/media_cache"
 # The next line is if you plan to use `sqlite`
 $ sudo install -d "/var/lib/photoview"
-$ cd /opt/photoview/ui/build
+$ cd /opt/photoview/ui/dist
 $ sudo find * -type f -exec install -Dm0644 "{}" "/usr/share/webapps/photoview-ui/{}" \;
 $ cd /opt/photoview/api
 $ sudo install -Dm0755 -t "/usr/lib/photoview" "/opt/photoview/api/photoview"
