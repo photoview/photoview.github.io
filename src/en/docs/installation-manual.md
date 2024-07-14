@@ -8,6 +8,8 @@ translationKey: installation-manual
 This guide explains how to build, install and configure Photoview
 on a fresh installation of `Ubuntu 20.04 LTS` to run directly on the system without using Docker.
 
+> NOTE: Here is the [blog post](https://smyck.net/2023/04/25/how-to-install-photoview-on-freebsd/) with the step-by-step guide to install Photoview on FreeBSD.
+
 ## Preparation
 
 Make sure you got the necessary tools and libraries in order to build and run Photoview.
