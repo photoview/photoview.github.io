@@ -26,7 +26,7 @@ $ sudo add-apt-repository ppa:strukturag/libde265
 
 # Installation des dépendances nécessaires pour Photoview
 $ sudo apt install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev build-essential \
-  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
+  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg zlib1g-dev
 ```
 
 Installez ensuite Golang en suivant les instructions pour Linux depuis leur page [Download and install Go](https://golang.org/doc/install), cela devrait ressembler aux commandes suivantes :
