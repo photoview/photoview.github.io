@@ -58,8 +58,7 @@ $ sudo install -Dm0644 -t "/usr/lib/systemd/system" "/opt/photoview/systemd/phot
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.sysusers.conf" "/usr/lib/sysusers.d/photoview.conf"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.tmpfiles" "/usr/lib/tmpfiles.d/photoview.conf"
 $ sudo install -d "/var/cache/photoview/media_cache"
-# The next line is if you plan to use `sqlite`
-$ sudo install -d "/var/lib/photoview"
+$ sudo chown -R photoview:photoview /var/cache/photoview
 $ cd /opt/photoview/ui/dist
 $ sudo find * -type f -exec install -Dm0644 "{}" "/usr/share/webapps/photoview-ui/{}" \;
 $ cd /opt/photoview/api
@@ -67,6 +66,9 @@ $ sudo install -Dm0755 -t "/usr/lib/photoview" "/opt/photoview/api/photoview"
 $ sudo ln -s /usr/lib/photoview/photoview /usr/bin/photoview
 $ sudo find data -type f -exec install -Dm0644 "{}" "/usr/lib/photoview/{}" \;
 $ sudo install -Dm0644 "/opt/photoview/api/example.env" "/etc/photoview.env"
+# Seulement si vous utilisez `sqlite`:
+$ sudo install -d "/var/lib/photoview"
+$ sudo chown -R photoview:photoview /var/lib/photoview
 ```
 ### Utiliser le fichier `systemd`
 
