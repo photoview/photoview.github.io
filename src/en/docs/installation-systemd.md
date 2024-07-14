@@ -29,6 +29,8 @@ If you do so, the `photoview.service` and `photoview.tmpfiles` will need to be a
 
 > Reminder: These steps replace [Copy needed files](#copy-needed-files) from the manual installation guide.
 
+1. Create the `photoview` user and group
+   - `$ sudo adduser photoview --system --group --no-create-home`
 1. Copy `systemd` files:
    - `systemd/photoview.service` to `/etc/systemd/system/multi-user.target/photoview.service`
    - `systemd/photoview.sysusers.conf` to `/usr/lib/sysusers.d/photoview.conf`
@@ -49,6 +51,7 @@ If you do so, the `photoview.service` and `photoview.tmpfiles` will need to be a
 
 A synopsis of the previous steps by example:
 ```shell
+$ sudo adduser photoview --system --group --no-create-home
 $ cd /opt/photoview
 $ sudo install -Dm0644 -t "/usr/lib/systemd/system" "/opt/photoview/systemd/photoview.service"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.sysusers.conf" "/usr/lib/sysusers.d/photoview.conf"
