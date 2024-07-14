@@ -36,7 +36,7 @@ Il faudra alors faire attention de répercuter ces changement dans les variables
    - `systemd/photoview.service` vers `/etc/systemd/system/multi-user.target/photoview.service`
    - `systemd/photoview.sysusers.conf` vers `/usr/lib/sysusers.d/photoview.conf`
    - `systemd/photoview.tmpfiles` vers `/usr/lib/tmpfiles.d/photoview.conf`
-   > Si vous n'utilisez pas `sqlite`, supprimez la 2ème ligne de `systemd/photoview.tmpfiles` avant la copie.
+   > Si vous n'utilisez pas `sqlite`, supprimez la 2ème ligne de `systemd/photoview.tmpfiles` et la ligne `ReadWritePaths=/var/lib/photoview` de `systemd/photoview.service` avant la copie.
 1. Créez les répertoires dans lesquels les fichiers du programme seront placés :
    > A noter : la commande `install`, comme expliqué ci-dessous, crée les répertoires requis.
    - `/usr/share/webapps/photoview-ui`
