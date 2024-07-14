@@ -47,10 +47,10 @@ $ go version
 # Expected output: go version go1.16 linux/amd64
 ```
 
-Maintenant, installez Node 16 et NPM si vous ne les avez pas déjà installés sur votre système.
+Maintenant, installez Node 18 et NPM si vous ne les avez pas déjà installés sur votre système.
 
 ```shell
-$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+$ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 $ sudo apt install nodejs
 ```
 
