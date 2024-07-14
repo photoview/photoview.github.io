@@ -129,6 +129,8 @@ We will use that to configure Photoview.
 
 Copy the `api/example.env` file to the output directory, and name it `.env`.
 
+> Note: If running Photoview as a `systemd` service, the file containing environment variables is `/etc/photoview.env` and is created in the steps outlined in the [systemd installation guide](/{{ locale }}/docs/installation-systemd/).
+
 ```shell
 $ cp api/example.env app/.env
 ```
