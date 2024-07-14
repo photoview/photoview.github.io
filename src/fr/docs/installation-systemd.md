@@ -30,6 +30,8 @@ Il faudra alors faire attention de répercuter ces changement dans les variables
 
 > Rappel : Ces étapes remplacent celles de la rubrique _Copiez UI et back-end au bon endroit_ du guide d'installation manuelle.
 
+1. Créez l'utilisateur et le groupe `photoview`:
+   - `$ sudo adduser photoview --system --group --no-create-home`
 1. Copiez les fichiers `systemd`:
    - `systemd/photoview.service` vers `/etc/systemd/system/multi-user.target/photoview.service`
    - `systemd/photoview.sysusers.conf` vers `/usr/lib/sysusers.d/photoview.conf`
@@ -50,6 +52,7 @@ Il faudra alors faire attention de répercuter ces changement dans les variables
 
 Exemple de ce que donnent ces étapes :
 ```shell
+$ sudo adduser photoview --system --group --no-create-home
 $ cd /opt/photoview
 $ sudo install -Dm0644 -t "/usr/lib/systemd/system" "/opt/photoview/systemd/photoview.service"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.sysusers.conf" "/usr/lib/sysusers.d/photoview.conf"
