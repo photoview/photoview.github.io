@@ -72,7 +72,7 @@ $ npm install
 $ npm run build
 ```
 
-Cela build le code source de l'UI et l'enregistre dans le répertoire `ui/build/`.
+Cela build le code source de l'UI et l'enregistre dans le répertoire `ui/dist/`.
 
 ### Buildez l'API back-end
 
@@ -90,7 +90,7 @@ Créez un nouveau répertoire et deplacez les fichiers créés dedans.
 ```shell
 $ cd /opt/photoview
 $ mkdir app
-$ cp -r ui/build/ app/ui/
+$ cp -r ui/dist/ app/ui/
 $ cp api/photoview app/photoview
 $ cp -r api/data/ app/data/
 ```
