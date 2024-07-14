@@ -86,7 +86,7 @@ This builds the server executable to `api/photoview`.
 
 ### Copy needed files
 
-**Note**: To run Photoview as a `systemd` service, copy files as outlined in the [systemd installation guide](/{{ locale }}/docs/installation-systemd/). Otherwise, follow the steps here.
+> Note: To run Photoview as a `systemd` service, copy files as outlined in the [systemd installation guide](/{{ locale }}/docs/installation-systemd/). Otherwise, follow the steps here.
 
 Make a new directory and move the needed files to it.
 
