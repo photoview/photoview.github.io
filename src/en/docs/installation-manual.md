@@ -98,7 +98,7 @@ $ cp api/photoview app/photoview
 $ cp -r api/data/ app/data/
 ```
 
-## Setup database
+## Set up database
 
 > It's highly recommended to configure a full database,
 > but Sqlite is also supported though it might be substantially slower on big media libraries.
