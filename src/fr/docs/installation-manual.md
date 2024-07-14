@@ -85,6 +85,8 @@ Cela build l'executable côté serveur et l'enregistre dans `api/photoview`.
 
 ### Copiez UI et back-end au bon endroit
 
+> Si vous choisissez d'utiliser `systemd`, suivez le [Utilisation avec systemd](/{{ locale }}/docs/installation-systemd/).
+
 Créez un nouveau répertoire et deplacez les fichiers créés dedans.
 
 ```shell
