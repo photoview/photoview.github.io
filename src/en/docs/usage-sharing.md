@@ -4,7 +4,11 @@ group: Usage
 translationKey: usage-sharing
 ---
 
-Photoview allows you to share individual photos/videos and albums. A share is a link that allows the viewer to see only those photos and videos that the share points to. A share can be password protected and in the future it can have an expiry date (this feature is not yet implemented). Here is how to create a share:
+Photoview allows you to share individual photos/videos and albums. A share is a link that allows the viewer to see only those photos and videos that the share points to. A share can be password protected and in the future it can have an expiry date (this feature is not yet implemented). 
+
+*Note that in order for a share to function outside of your local network, you will have to make Photoview available from the Internet. How to set this up is outside the scope of this manual, but generally it involves providing a domain-name through your ISP or Registrar, then setting up a reverse proxy like Nginx, Traefik or Caddy to point that domain-name to the server in your local area network that provides the Photoview service.*
+
+Provided that you have set up your Photoview app to be available from the Internet - here is how to create a share:
 ### Sharing a single photo or video ###
 In **Timeline**, **Albums** or **People** view, click the &#9432; on the top right of a photo and scroll down to _Sharing options_ in the panel that appears. Unless you have previously created a share for this photo, the text _"No shares found"_ will be present. Press the **+ Add shares** link. _"No shares found"_ will now be replaced with a link symbol and the text _"Public link"_ followed by a sequence of letters and numbers (a hexadecimal hash). To the right, you have three icons: 
 1. An icon that looks like two overlapping squares - this represents the "copy" action. Click this to copy the link so that you can paste it in an email or similar.
