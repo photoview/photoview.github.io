@@ -29,7 +29,7 @@ $ sudo add-apt-repository ppa:strukturag/libde265
 
 # Install dependencies required to build and run Photoview
 $ sudo apt install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev build-essential \
-  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
+  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg zlib1g-dev
 ```
 
 Install Golang by following the instructions for Linux from their [Download and install Go](https://golang.org/doc/install) page, the steps should be something like the following.
@@ -50,10 +50,10 @@ $ go version
 # Expected output: go version go1.16 linux/amd64
 ```
 
-Now install Node 16 and NPM if you've not done so already (it installs npm automatically)
+Now install Node 18 and NPM if you've not done so already (it installs npm automatically)
 
 ```shell
-$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+$ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 $ sudo apt install nodejs
 ```
 
@@ -75,7 +75,7 @@ $ npm install
 $ npm run build
 ```
 
-This builds the UI source code and saves it in the `ui/build/` directory.
+This builds the UI source code and saves it in the `ui/dist/` directory.
 
 ### Build the API back-end
 
@@ -88,17 +88,19 @@ This builds the server executable to `api/photoview`.
 
 ### Copy needed files
 
+> Note: To run Photoview as a `systemd` service, copy files as outlined in the [systemd installation guide](/{{ locale }}/docs/installation-systemd/). Otherwise, follow the steps here.
+
 Make a new directory and move the needed files to it.
 
 ```shell
 $ cd /opt/photoview
 $ mkdir app
-$ cp -r ui/build/ app/ui/
+$ cp -r ui/dist/ app/ui/
 $ cp api/photoview app/photoview
 $ cp -r api/data/ app/data/
 ```
 
-## Setup database
+## Set up database
 
 > It's highly recommended to configure a full database,
 > but Sqlite is also supported though it might be substantially slower on big media libraries.
@@ -128,6 +130,8 @@ Photoview is configured through environment variables. It will also load environ
 We will use that to configure Photoview.
 
 Copy the `api/example.env` file to the output directory, and name it `.env`.
+
+> Note: If running Photoview as a `systemd` service, the file containing environment variables is `/etc/photoview.env` and is created in the steps outlined in the [systemd installation guide](/{{ locale }}/docs/installation-systemd/).
 
 ```shell
 $ cp api/example.env app/.env

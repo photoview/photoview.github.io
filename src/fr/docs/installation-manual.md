@@ -26,7 +26,7 @@ $ sudo add-apt-repository ppa:strukturag/libde265
 
 # Installation des dépendances nécessaires pour Photoview
 $ sudo apt install libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev build-essential \
-  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg
+  libdlib19 libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-dev libheif-dev pkg-config gpg zlib1g-dev
 ```
 
 Installez ensuite Golang en suivant les instructions pour Linux depuis leur page [Download and install Go](https://golang.org/doc/install), cela devrait ressembler aux commandes suivantes :
@@ -47,10 +47,10 @@ $ go version
 # Expected output: go version go1.16 linux/amd64
 ```
 
-Maintenant, installez Node 16 et NPM si vous ne les avez pas déjà installés sur votre système.
+Maintenant, installez Node 18 et NPM si vous ne les avez pas déjà installés sur votre système.
 
 ```shell
-$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+$ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 $ sudo apt install nodejs
 ```
 
@@ -72,7 +72,7 @@ $ npm install
 $ npm run build
 ```
 
-Cela build le code source de l'UI et l'enregistre dans le répertoire `ui/build/`.
+Cela build le code source de l'UI et l'enregistre dans le répertoire `ui/dist/`.
 
 ### Buildez l'API back-end
 
@@ -85,12 +85,14 @@ Cela build l'executable côté serveur et l'enregistre dans `api/photoview`.
 
 ### Copiez UI et back-end au bon endroit
 
+> Si vous choisissez d'utiliser `systemd`, suivez le [Utilisation avec systemd](/{{ locale }}/docs/installation-systemd/).
+
 Créez un nouveau répertoire et deplacez les fichiers créés dedans.
 
 ```shell
 $ cd /opt/photoview
 $ mkdir app
-$ cp -r ui/build/ app/ui/
+$ cp -r ui/dist/ app/ui/
 $ cp api/photoview app/photoview
 $ cp -r api/data/ app/data/
 ```
