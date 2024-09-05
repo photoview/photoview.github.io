@@ -13,7 +13,7 @@ The easiest way to setup Photoview is using Docker with docker-compose.
 
 ### Configure compose file
 
-Make a new `docker-compose.yml` file, and copy the content of [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose.example.yml) to it.
+Make a new `docker-compose.yml` file, and copy the content of [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml) to it.
 
 Edit `docker-compose.yml`, find the comments starting with `Change This:`, and change the values, to properly match your setup. If you are just testing locally, you don't have to change anything.
 

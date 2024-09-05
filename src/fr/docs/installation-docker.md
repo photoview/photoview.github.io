@@ -84,7 +84,7 @@ $ docker-compose ps   # show status of the running containers
 [docker-install]: https://docs.docker.com/engine/install/
 [install-docker-compose]: https://docs.docker.com/compose/install/
 [docker-bind-mount]: https://docs.docker.com/storage/bind-mounts/
-[docker-compose.example.yml]: https://github.com/photoview/photoview/blob/master/docker-compose.example.yml
+[docker-compose.example.yml]: https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml
 [mapbox-access-token]: https://account.mapbox.com/access-tokens/
 
 ## Docker tags et versioning
