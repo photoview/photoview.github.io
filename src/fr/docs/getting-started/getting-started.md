@@ -13,7 +13,7 @@ Le moyen le plus simple pour installer **Photoview** est d'utiliser Docker avec 
 
 ### Configurer le fichier docker-compose
 
-Commencez par créer un nouveau fichier `docker-compose.yml`, puis collez-y le contenu du fichier [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose.example.yml).
+Commencez par créer un nouveau fichier `docker-compose.yml`, puis collez-y le contenu du fichier [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml) (MariaDB/Postgres/Sqlite et Watchtower) ou [docker-compose.minimal.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.minimal.example.yml) (MariaDB/Sqlite).
 
 Ouvrez le fichier `docker-compose.yml`, trouvez les commentaires commençant par `Change This:`, puis modifiez les valeurs pour qu'elles correspondent à votre configuration.
 Si vous faites simplement des tests sur votre machine en local, vous n'avez rien à modifier, laissez les valeurs telles quelles.
