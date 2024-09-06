@@ -21,8 +21,8 @@ Although this tool can't do anything you can't already to with Docker alone, it 
 > Prerequisite: Docker Engine and Docker Compose is installed on your server.
 > See [Install Docker Engine][docker-install] and [Install Docker Compose][install-docker-compose] on how to do so.
 
-To configure Photoview using Docker Compose, first copy the contents of [docker-compose.example.yml](https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml),
-and save it to a file called `docker-compose.yml`.
+To configure Photoview using Docker Compose, first copy the contents of either the [docker-compose.example.yml][docker-compose.example.yml] or [docker-compose.minimal.example.yml][docker-compose.minimal.example.yml] ,
+and save it to a file called `docker-compose.yml`. The minimal version uses MariaDB, while the full example also includes commented out Postgres and Watchtower containers.
 
 Within the file you will find two services: the Photoview server itself named `photoview` and a MariaDB database named `db`.
 The Photoview service is already configured with the database.
@@ -90,6 +90,7 @@ $ docker-compose ps   # show status of the running containers
 [install-docker-compose]: https://docs.docker.com/compose/install/
 [docker-bind-mount]: https://docs.docker.com/storage/bind-mounts/
 [docker-compose.example.yml]: https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.example.yml
+[docker-compose.minimal.example.yml]: https://github.com/photoview/photoview/blob/master/docker-compose%20example/docker-compose.minimal.example.yml
 [mapbox-access-token]: https://account.mapbox.com/access-tokens/
 
 ## Docker tags and versioning
