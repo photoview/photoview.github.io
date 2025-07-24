@@ -9,8 +9,8 @@ You can optionally use `systemd` to manage photoview and start the program at bo
 It also allows the program to run as its own system user, enhancing the security of the process.
 
 
-To get started, follow the [Manual Setup Installation guild](/{{ locale }}/docs/installation-manual/).
-When you get to the _Copy needed files section_, replace those steps with the steps listed below.
+To get started, follow the [Manual Setup Installation guide](/{{ locale }}/docs/installation-manual/).
+When you get to the _Copy needed files_ section, replace those steps with the steps listed below.
 
 ## Using with `systemd`
 
@@ -29,11 +29,13 @@ If you do so, the `photoview.service` and `photoview.tmpfiles` will need to be a
 
 > Reminder: These steps replace [Copy needed files](#copy-needed-files) from the manual installation guide.
 
+1. Create the `photoview` user and group
+   - `$ sudo adduser photoview --system --group --no-create-home`
 1. Copy `systemd` files:
    - `systemd/photoview.service` to `/etc/systemd/system/multi-user.target/photoview.service`
    - `systemd/photoview.sysusers.conf` to `/usr/lib/sysusers.d/photoview.conf`
    - `systemd/photoview.tmpfiles` to `/usr/lib/tmpfiles.d/photoview.conf`
-   > If you do not plan to use `sqlite`, remove the 2nd line from `systemd/photoview.tmpfiles` before copying.
+   > If you do not plan to use `sqlite`, remove the 2nd line from `systemd/photoview.tmpfiles` and comment out the line `ReadWritePaths=/var/lib/photoview` in `systemd/photoview.service` before copying.
 1. Make the directories where the program files will be placed :
    > Note: The `install` command, as demonstrated below, creates these required directories for you.
    - `/usr/share/webapps/photoview-ui`
@@ -49,20 +51,23 @@ If you do so, the `photoview.service` and `photoview.tmpfiles` will need to be a
 
 A synopsis of the previous steps by example:
 ```shell
+$ sudo adduser photoview --system --group --no-create-home
 $ cd /opt/photoview
 $ sudo install -Dm0644 -t "/usr/lib/systemd/system" "/opt/photoview/systemd/photoview.service"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.sysusers.conf" "/usr/lib/sysusers.d/photoview.conf"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.tmpfiles" "/usr/lib/tmpfiles.d/photoview.conf"
 $ sudo install -d "/var/cache/photoview/media_cache"
-# The next line is if you plan to use `sqlite`
-$ sudo install -d "/var/lib/photoview"
-$ cd /opt/photoview/ui/build
+$ sudo chown -R photoview:photoview /var/cache/photoview
+$ cd /opt/photoview/ui/dist
 $ sudo find * -type f -exec install -Dm0644 "{}" "/usr/share/webapps/photoview-ui/{}" \;
 $ cd /opt/photoview/api
 $ sudo install -Dm0755 -t "/usr/lib/photoview" "/opt/photoview/api/photoview"
 $ sudo ln -s /usr/lib/photoview/photoview /usr/bin/photoview
 $ sudo find data -type f -exec install -Dm0644 "{}" "/usr/lib/photoview/{}" \;
 $ sudo install -Dm0644 "/opt/photoview/api/example.env" "/etc/photoview.env"
+# The next two lines are if you plan to use `sqlite`
+$ sudo install -d "/var/lib/photoview"
+$ sudo chown -R photoview:photoview /var/lib/photoview
 ```
 ### Using the `systemd` unit file
 

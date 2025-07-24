@@ -30,11 +30,13 @@ Il faudra alors faire attention de répercuter ces changement dans les variables
 
 > Rappel : Ces étapes remplacent celles de la rubrique _Copiez UI et back-end au bon endroit_ du guide d'installation manuelle.
 
+1. Créez l'utilisateur et le groupe `photoview`:
+   - `$ sudo adduser photoview --system --group --no-create-home`
 1. Copiez les fichiers `systemd`:
    - `systemd/photoview.service` vers `/etc/systemd/system/multi-user.target/photoview.service`
    - `systemd/photoview.sysusers.conf` vers `/usr/lib/sysusers.d/photoview.conf`
    - `systemd/photoview.tmpfiles` vers `/usr/lib/tmpfiles.d/photoview.conf`
-   > Si vous n'utilisez pas `sqlite`, supprimez la 2ème ligne de `systemd/photoview.tmpfiles` avant la copie.
+   > Si vous n'utilisez pas `sqlite`, supprimez la 2ème ligne de `systemd/photoview.tmpfiles` et la ligne `ReadWritePaths=/var/lib/photoview` de `systemd/photoview.service` avant la copie.
 1. Créez les répertoires dans lesquels les fichiers du programme seront placés :
    > A noter : la commande `install`, comme expliqué ci-dessous, crée les répertoires requis.
    - `/usr/share/webapps/photoview-ui`
@@ -50,20 +52,23 @@ Il faudra alors faire attention de répercuter ces changement dans les variables
 
 Exemple de ce que donnent ces étapes :
 ```shell
+$ sudo adduser photoview --system --group --no-create-home
 $ cd /opt/photoview
 $ sudo install -Dm0644 -t "/usr/lib/systemd/system" "/opt/photoview/systemd/photoview.service"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.sysusers.conf" "/usr/lib/sysusers.d/photoview.conf"
 $ sudo install -Dm0644 "/opt/photoview/systemd/photoview.tmpfiles" "/usr/lib/tmpfiles.d/photoview.conf"
 $ sudo install -d "/var/cache/photoview/media_cache"
-# The next line is if you plan to use `sqlite`
-$ sudo install -d "/var/lib/photoview"
-$ cd /opt/photoview/ui/build
+$ sudo chown -R photoview:photoview /var/cache/photoview
+$ cd /opt/photoview/ui/dist
 $ sudo find * -type f -exec install -Dm0644 "{}" "/usr/share/webapps/photoview-ui/{}" \;
 $ cd /opt/photoview/api
 $ sudo install -Dm0755 -t "/usr/lib/photoview" "/opt/photoview/api/photoview"
 $ sudo ln -s /usr/lib/photoview/photoview /usr/bin/photoview
 $ sudo find data -type f -exec install -Dm0644 "{}" "/usr/lib/photoview/{}" \;
 $ sudo install -Dm0644 "/opt/photoview/api/example.env" "/etc/photoview.env"
+# Seulement si vous utilisez `sqlite`:
+$ sudo install -d "/var/lib/photoview"
+$ sudo chown -R photoview:photoview /var/lib/photoview
 ```
 ### Utiliser le fichier `systemd`
 
