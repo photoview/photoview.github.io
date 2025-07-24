@@ -5,7 +5,7 @@ Website and documentation for [Photoview](https://github.com/photoview/photoview
 ## Contributing
 
 Pull requests that improve or expand the documentation is much appreciated.
-The documentation is written in markdown, located under [./src/docs/](./src/docs).
+The documentation is written in markdown, located under [./src/en/docs](./src/en/docs). 
 
 To build and test the site locally, run the following commands.
 
