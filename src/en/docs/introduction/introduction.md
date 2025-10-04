@@ -9,14 +9,13 @@ permalink: /{{ locale }}/docs/
 
 {% optimizedImage './timeline.png', 'Screenshot of Photoview', 'class="block w-4/5 mx-auto my-6"' %}
 
-Photoview is a simple and user-friendly photo gallery that's made for photographers HELLO
-and aims to provide an easy and fast way to navigate directories, with thousands of high resolution photos.
+Photoview is a simple and user-friendly photo gallery that's made for photographers and aims to provide an easy and fast way to navigate directories with thousands of high-resolution photos.
 
 You configure Photoview to look for photos and videos within a directory on your file system.
 The scanner will then automatically pick up your media and start to generate thumbnail images to make browsing really fast.
-It's worth noting that Photoview will never actually touch you media, it only needs read access and it saves thumbnails to a cache independent of the original media.
+It's worth noting that Photoview never actually touches your media, it only needs read access and saves thumbnails to a cache independent of the original media.
 
-When the media has been scanned it will show up on the website, organised in the same way as on the filesystem.
+Once scanned, the media will show up on the website being organised in the same way as on the filesystem.
 From the website it is also possible to see your media on a world map, provided the image files have embedded location information.
 
 ## Aim and values
@@ -26,7 +25,7 @@ Photoview has been developed with a focused set of aims and values from the begi
 **The file system is the _Source of Truth_**,
 this is the most important value for the software.
 There are two big advantages to letting the file system dictate the structure and organisation of the media.
-Firstly, it provides a lot of flexibility for organisation, as it lets you use what ever tool that can modify the file system for organising the media,
+Firstly, it provides a lot of flexibility for organisation, as it lets you use whatever tool that can modify the file system for organising the media,
 let it be a simple file server like FTP or NTFS or a cloud service like [Nextcloud](/{{ locale }}/docs/usage-nextcloud/).
 Secondly, it removes dependency; you can uninstall Photoview at any time and your photos are still organised.
 
@@ -40,7 +39,7 @@ this hardens security significantly, as your media can be `read-only`, meaning t
 - **Sharing**. Albums, as well as individual media, can easily be shared with a public link, the link can optionally be password protected.
 - **RAW support**. [Darktable](https://www.darktable.org/) is used to automatically convert RAW files from a large range of [supported cameras](https://www.darktable.org/resources/camera-support/).
 - **EXIF parsing**. All media is scanned for EXIF data and shown next to the media when selected.
-- **Duplication detection**. If a RAW and JPEG image pair is found next to each other, only one image show up and the scanner will use the JPEG image, instead of generating a new in the cache.
+- **Duplication detection**. If a RAW and JPEG image pair is found next to each other, only one image shows up and the scanner will use the JPEG image, instead of generating a new in the cache.
 - **Video support**. Many common video formats are supported. Videos will automatically be optimized for web.
 - **Timeline**. Media will be shown on a timeline that sorts media by the day they were created and groups them by day.
 - **World map**. Photos with embedded GPS coordinates are presented on a world map.
@@ -51,6 +50,6 @@ this hardens security significantly, as your media can be `read-only`, meaning t
 
 ## How do I get started?
 
-- If you just want to get up and running as fast as possible then see [Getting Started](/{{ locale }}/docs/getting-started/).
-- If you instead want a more detailed guide see [setup with docker](/{{ locale }}/docs/installation-docker/)
+- If you just want to get up and running as fast as possible, see [Getting Started](/{{ locale }}/docs/getting-started/).
+- If you want a more detailed guide instead, see [setup with docker](/{{ locale }}/docs/installation-docker/)
 - If you want to install it manually without Docker, see the [manual setup](/{{ locale }}/docs/installation-manual/) guide instead.
