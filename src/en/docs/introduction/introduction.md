@@ -51,5 +51,5 @@ this hardens security significantly, as your media can be `read-only`, meaning t
 ## How do I get started?
 
 - If you just want to get up and running as fast as possible, see [Getting Started](/{{ locale }}/docs/getting-started/).
-- If you want a more detailed guide instead, see [setup with docker](/{{ locale }}/docs/installation-docker/)
-- If you want to install it manually without Docker, see the [manual setup](/{{ locale }}/docs/installation-manual/) guide instead.
+- If you want a more detailed guide instead, see [Setup with Docker](/{{ locale }}/docs/installation-docker/).
+- If you want to install it manually without Docker, see the [Manual Setup](/{{ locale }}/docs/installation-manual/) guide instead.
