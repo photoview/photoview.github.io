@@ -53,5 +53,5 @@ L'onglet _Personnes_ vous permet de gérer cette fonctionnalité avec beaucoup d
 ## Comment démarrer ?
 
 - Pour démarrer le plus rapidement possible avec Photoview, rendez-vous sur la rubrique [Démarrer](/{{ locale }}/docs/getting-started/).
-- Pour plus de détails, voir la rubrique [Installation avec Docker](/{{ locale }}/docs/installation-docker/)
+- Pour plus de détails, voir la rubrique [Installation avec Docker](/{{ locale }}/docs/installation-docker/).
 - Pour une installation manuelle sans Docker, lisez le guide [Installation manuelle](/{{ locale }}/docs/installation-manual/).
