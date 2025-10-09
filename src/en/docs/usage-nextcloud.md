@@ -35,7 +35,7 @@ Open it up and under `volumes:` add a new volume like so:
 
 Replace `NEXTCLOUD_PATH` with the path you copied in step 1.
 The `/nextcloud` path dictates where this mount can be accessed from within the container, this will be important for the next step.
-The `:ro` in the end instructs Docker to mount the folder in read-only mode.
+The `:ro` at the end instructs Docker to mount the folder in read-only mode.
 
 Now restart the docker container.
 
