@@ -7,11 +7,11 @@ translationKey: installation-docker
 
 By far the easiest way to get up and running with Photoview is by running it inside a Docker container.
 With Docker, all dependencies are automatically installed and ready to go.
-If you are completeley new to Docker and want to learn more, check out this [article by FreeCodeCamp][docker-simplified].
+If you are completely new to Docker and want to learn more, check out this [article by FreeCodeCamp][docker-simplified].
 
 To better organise the Docker containers, a tool called [Docker Compose][docker-compose] can be used.
 This lets you configure containers in a `yaml` file, and quickly start all the configured containers at once.
-Although this tool can't do anything you can't already to with Docker alone, it simplifes the process.
+Although this tool can't do anything you couldn't already do with Docker alone, it simplifies the process.
 
 [docker-simplified]: https://www.freecodecamp.org/news/docker-simplified-96639a35ff36/
 [docker-compose]: https://docs.docker.com/compose/
@@ -37,7 +37,7 @@ But you might want to make a few changes to fit your setup:
 
 You can change the port that Photoview will be running on under `services.photoview.ports`.
 By default the value is `8000:80`, this means that port `80` inside the container will be mapped to `8000` on the host machine.
-Eg. if you want your instance to run on port `1234` instead, change the value to `1234:80`.
+E.g. if you want your instance to run on port `1234` instead, change the value to `1234:80`.
 Notice that the port inside the container `80` matches the value of `PHOTOVIEW_LISTEN_PORT=80` under `services.photoview.environment`.
 
 #### Environment variables
